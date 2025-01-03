@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link href="css/headphones.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // NAVIGATION SCROLLING EFFECT
+
+        let navBar = document.querySelector("nav");
+        navScroll(false);
+
+        document.addEventListener("scroll", () => {
+          navScroll(false);
+        });
+
+        function navScroll(result) {
+          // result = if the user is currently viewing the menu page
+          if (window.scrollY > 0 && !result) {
+            navBar.style.boxShadow = "0 5px 20px rgba(190, 190, 190, 0.15)";
+            navBar.style.backgroundColor = " #edf2fb";
+          } else {
+            navBar.style.boxShadow = "none";
+            navBar.style.backgroundColor = "#edf2fb";
+          }
+        }
+
+        // MENU BAR
+
+        let menuBar = document.querySelector("#menu-bar");
+        let menuPage = document.querySelector("#menu-page");
+        let html = document.querySelector("html");
+
+        // Determine Screen Device: Desktop or Mobile
+        let menuBarStyle = window.getComputedStyle(menuBar);
+        let screenType = "";
+
+        if (menuBarStyle.display === "flex") {
+          screenType = "mobile";
+        } else if (menuBarStyle.display === "none") {
+          screenType = "desktop";
+        } else {
+          console.log("Error: Failed to identify screen type", screenType);
+        }
+
+        // Show/Hide Menu Page
+
+        menuBar.addEventListener("click", () => {
+          menuPage.classList.toggle("active");
+
+          html.style.overflow = menuPage.classList.contains("active")
+            ? "hidden"
+            : "scroll";
+          navScroll(menuPage.classList.contains("active"));
+        });
+
+        // PRODUCT CARDS DISPLAY
+
+        let productContainerWidth = document.querySelector(
+          ".product-cards-container"
+        ).offsetWidth;
+
+        let rootStyles = getComputedStyle(html);
+        let productCardWidth;
+        let productCards;
+
+        if (screenType === "desktop") {
+          productCardWidth = parseInt(
+            rootStyles
+              .getPropertyValue("--product-card-width")
+              .replace("px", "")
+          );
+          productCardsPerRow = Math.floor(
+            productContainerWidth / (productCardWidth + 5)
+          );
+        } else if (screenType === "mobile") {
+          productCardsPerRow = html.offsetWidth > 430 ? 3 : 2;
+          productCardWidth = Math.floor(
+            productContainerWidth / productCardsPerRow - 10
+          );
+        } else {
+          console.log(
+            "Error: Failed to set productCardsPerRow & productCardWidth"
+          );
+        }
+
+        let marginSpacing =
+          (productContainerWidth - productCardsPerRow * productCardWidth) /
+          (productCardsPerRow - 1);
+        let lastElement = productCardsPerRow - 1;
+
+        let sectionLastElement = [];
+        let productSections = document.querySelectorAll(".product-section");
+        productSections.forEach((section) => {
+          productCards = section.querySelectorAll(".product-card");
+
+          for (let i = 0; i < productCardsPerRow; i++) {
+            productCards[i].classList.add("active");
+
+            if (i === lastElement) {
+              productCards[i].style.marginRight = "0px";
+            } else {
+              productCards[i].style.marginRight = `${marginSpacing}px`;
+            }
+          }
+
+          sectionLastElement[section.id] = lastElement;
+        });
+
+        // ADDING ITEMS TO WISHLIST
+
+        let wishListCount;
+        let heartButtons = document.querySelectorAll(".heart-button");
+
+        heartButtons.forEach((button) => {
+          button.addEventListener("click", () => {
+            button.classList.toggle("active");
+
+            wishListCount = accessCounter(".wishlist-link span");
+            wishListCount.innerHTML = document.querySelectorAll(
+              ".heart-button.active"
+            ).length;
+          });
+        });
+
+        // ADDING ITEMS TO CART
+
+        let cartCount;
+        let cartButtons = document.querySelectorAll(
+          ".product-card .blue-button"
+        );
+
+        cartButtons.forEach((button) => {
+          button.addEventListener("click", () => {
+            button.classList.toggle("active");
+
+            let buttonString = button.innerHTML.trim();
+            if (buttonString == "Add To Cart") {
+              button.innerHTML = "Remove";
+            } else if (buttonString == "Remove") {
+              button.innerHTML = "Add To Cart";
+            } else {
+              console.log(
+                "Error: Adding items to cart failed.",
+                buttonString,
+                button.parentElement
+              );
+            }
+
+            cartCount = accessCounter(".cart-link span");
+            cartCount.innerHTML = document.querySelectorAll(
+              ".product-card .blue-button.active"
+            ).length;
+          });
+        });
+
+        function accessCounter(spanElement) {
+          if (screenType === "desktop") {
+            return document
+              .querySelector("#navbar-tools")
+              .querySelector(spanElement);
+          } else if (screenType === "mobile") {
+            return document
+              .querySelector("#menu-tools")
+              .querySelector(spanElement);
+          } else {
+            console.log("Error: accessCounter Function failed.");
+          }
+        }
+
+        // SLIDESHOW
+
+        let slideshowButtons = document.querySelectorAll(".slideshow-button");
+        slideshowButtons.forEach((button) => {
+          button.addEventListener("click", () => {
+            let slideshowSection = button.parentElement.dataset.slideshow;
+            let slideshowContainer = document.querySelector(
+              `#product-section-${slideshowSection}`
+            );
+            let productCards =
+              slideshowContainer.querySelectorAll(".product-card");
+
+            let currentSection = `product-section-${slideshowSection}`;
+            if (button.classList.contains("prev-button")) {
+              if (
+                sectionLastElement[currentSection] <=
+                productCardsPerRow - 1
+              ) {
+                sectionLastElement[currentSection] = productCards.length - 1;
+              } else {
+                sectionLastElement[currentSection]--;
+              }
+            } else if (button.classList.contains("next-button")) {
+              if (
+                sectionLastElement[currentSection] ===
+                productCards.length - 1
+              ) {
+                sectionLastElement[currentSection] = productCardsPerRow - 1;
+              } else {
+                sectionLastElement[currentSection]++;
+              }
+            } else {
+              console.log("Slideshow: Error occurred");
+            }
+
+            for (let i = 0; i < productCards.length; i++) {
+              if (
+                i <= sectionLastElement[currentSection] &&
+                i >=
+                  sectionLastElement[currentSection] - (productCardsPerRow - 1)
+              ) {
+                productCards[i].classList.add("active");
+
+                if (i === sectionLastElement[currentSection]) {
+                  productCards[i].style.marginRight = "0px";
+                } else {
+                  productCards[i].style.marginRight = `${marginSpacing}px`;
+                }
+              } else {
+                productCards[i].classList.remove("active");
+                productCards[i].style.marginRight = "0px";
+              }
+            }
+          });
+        });
+      });
+    </script>
+  </head>
+  </head>
+  <body>
+    <nav>
+      <div id="navbar">
+        <div id="navbar-logo">
+          <img
+            src="./images/961Tech.png"
+            alt="961Tech, Company Ecommerce Logo"
+            width="260"
+            height="130"
+          />
+        </div>
+        <div id="menu-bar">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            class="bi bi-list"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"
+            />
+          </svg>
+        </div>
+        <div id="navbar-links">
+          <ul>
+            <li>
+              <a href="index.html"> Home </a>
+            </li>
+            <li>
+              <a href="products.html"> Products </a>
+              <ul class=" dropdown">
+                <li><a href="electronics.html">Electronics</a></li>
+                <li><a href="audio.html">Audio</a></li>
+                <li><a href="wearables.html">Wearables</a></li>
+                <li><a href="accessories.html">Accessories</a></li>
+
+            </ul>
+            </li>
+            <li>
+              <a href="#"> Services </a>
+            </li>
+            <li>
+              <a href="#"> About </a>
+            </li>
+          </ul>
+
+          <div class="search">
+            <label for="search">Search:</label>
+            <input type="search" id="search" name="search" placeholder="Search here...">
+        </div>
+          <div class="collection-tools" id="navbar-tools">
+            <a class="cart-link" href="#">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                fill="currentColor"
+                class="bi bi-bag"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"
+                />
+              </svg>
+              <span>0</span>
+            </a>
+            <a class="wishlist-link" href="#">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                fill="currentColor"
+                class="bi bi-heart"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"
+                />
+              </svg>
+              <span>0</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+
+    <div class="header">
+        <h2>Chargers</h2>
+
+    </div>
+    <div class="container">
+
+        <div class="product" data-category="accessories">
+            <div class="image_product">
+                <img src="images/Chargers/OIP (2).jpeg" alt="">
+            </div>
+
+            <div class="name_product">
+                <h3>SAMSUNG</h3>
+            </div> 
+
+            <div class="price_product">
+                <h4>30$</h4>
+            </div>
+
+            <div class="desc_product">
+                <p>Samsung Official 45W USB-C Super Fast Charging Wall Charger (Black)</p>
+            </div>
+
+            <div>
+                <label for="qty">Quantity</label>
+                <input type="number" name="qty" id="qty" min="1" max="10">
+            </div>
+
+            <label for="rate_product">Rate Product:</label>
+            <input type="number" id="rate_product" name="rate_prouct" min="0" max="5" step="0.1"    placeholder="0.0">
+
+            <div class="add_to_cart">
+                <a href="#">
+                <button type="button">Add To Cart</button>
+                </a>
+            </div>
+        </div>
+     
+
+        
+        <div class="product" data-category="accessories">
+            <div class="image_product">
+                <img src="images/Chargers/OIP.jpeg" alt="">
+            </div>
+
+            <div class="name_product">
+                <h3>Samsung Cordless Charger</h3>
+            </div> 
+
+            <div class="price_product">
+                <h4>60$</h4>
+            </div>
+
+            <div class="desc_product">
+                <p>Samsung 15W Fast Charge 2.0 Wireless Charger Stand - Black (US Version with Warranty)</p>
+            </div>
+
+            <div>
+                <label for="qty">Quantity</label>
+                <input type="number" name="qty" id="qty" min="1" max="10">
+            </div>
+
+            <label for="rate_product">Rate Product:</label>
+            <input type="number" id="rate_product" name="rate_prouct" min="0" max="5" step="0.1"    placeholder="0.0">
+
+            <div class="add_to_cart">
+                <a href="#">
+                <button type="button">Add To Cart</button>
+                </a>
+            </div>
+        </div>
+
+
+        
+        <div class="product" data-category="accessories">
+            <div class="image_product">
+                <img src="images/Chargers/OIP (1).jpeg" alt="">
+            </div>
+
+            <div class="name_product">
+                <h3>Samsung Qi FastCharger</h3>
+            </div> 
+
+            <div class="price_product">
+                <h4>100$</h4>
+            </div>
+
+            <div class="desc_product">
+                <p>Samsung Qi Certified Fast Charger & Wireless Charging Stand</p>
+            </div>
+
+            <div>
+                <label for="qty">Quantity</label>
+                <input type="number" name="qty" id="qty" min="1" max="10">
+            </div>
+
+            <label for="rate_product">Rate Product:</label>
+            <input type="number" id="rate_product" name="rate_prouct" min="0" max="5" step="0.1"    placeholder="0.0">
+
+            <div class="add_to_cart">
+                <a href="#">
+                <button type="button">Add To Cart</button>
+                </a>
+            </div>
+        </div>
+
+
+        <div class="product" data-category="accessories">
+            <div class="image_product">
+                <img src="images/Chargers/OIP (3).jpeg" alt="">
+            </div>
+
+            <div class="name_product">
+                <h3>Apple MagSafe Charger</h3>
+            </div> 
+
+            <div class="price_product">
+                <h4>49$</h4>
+            </div>
+
+            <div class="desc_product">
+                <p> The perfectly aligned magnets attach to your iPhone 12 or later. The MagSafe Charger provides faster wireless charging up to 25W when paired with a 30W power adapter</p>
+            </div>
+
+            <div>
+                <label for="qty">Quantity</label>
+                <input type="number" name="qty" id="qty" min="1" max="10">
+            </div>
+
+            <label for="rate_product">Rate Product:</label>
+            <input type="number" id="rate_product" name="rate_prouct" min="0" max="5" step="0.1"    placeholder="0.0">
+
+            <div class="add_to_cart">
+                <a href="#">
+                <button type="button">Add To Cart</button>
+                </a>
+            </div>
+        </div>
+
+
+        
+        <div class="product" data-category="accessories">
+            <div class="image_product">
+                <img src="images/Chargers/MU7T2_GEO_US.jpeg" alt="">
+            </div>
+
+            <div class="name_product">
+                <h3>20W USB-C Power Adapter</h3>
+            </div> 
+
+            <div class="price_product">
+                <h4>20$</h4>
+            </div>
+
+            <div class="desc_product">
+                <p>The Apple 20W USB‑C Power Adapter offers fast, efficient charging at home, in the office, or on the go</p>
+            </div>
+
+            <div>
+                <label for="qty">Quantity</label>
+                <input type="number" name="qty" id="qty" min="1" max="10">
+            </div>
+
+            <label for="rate_product">Rate Product:</label>
+            <input type="number" id="rate_product" name="rate_prouct" min="0" max="5" step="0.1"    placeholder="0.0">
+
+            <div class="add_to_cart">
+                <a href="#">
+                <button type="button">Add To Cart</button>
+                </a>
+            </div>
+        </div>
+
+
+        <div class="product" data-category="accessories">
+            <div class="image_product">
+                <img src="images/Chargers/IMAGE(2).jpg" alt="">
+            </div>
+
+            <div class="name_product">
+                <h3>Anker 511 Charger (Nano Pro) with 6 ft USB-C Cable</h3>
+            </div> 
+
+            <div class="price_product">
+                <h4>30$</h4>
+            </div>
+
+            <div class="desc_product">
+                <p>High-Speed Charging: The 20W USB-C charging gives you the power to charge up your iPhone 15 from 0 to 50% in just 27 minutes—that's up to 3 times faster than your old 5W charger</p>
+            </div>
+
+            <div>
+                <label for="qty">Quantity</label>
+                <input type="number" name="qty" id="qty" min="1" max="10">
+            </div>
+
+            <label for="rate_product">Rate Product:</label>
+            <input type="number" id="rate_product" name="rate_prouct" min="0" max="5" step="0.1"    placeholder="0.0">
+
+            <div class="add_to_cart">
+                <a href="#">
+                <button type="button">Add To Cart</button>
+                </a>
+            </div>
+        </div>
+
+        <div class="product" data-category="accessories">
+            <div class="image_product">
+                <img src="Images/Chargers/c2.jpeg" alt="">
+            </div>
+
+            <div class="name_product">
+                <h3>Iphone Cable</h3>
+            </div> 
+
+            <div class="price_product">
+                <h4>10$</h4>
+            </div>
+
+            <div class="desc_product">
+                <p>2 meters </p>
+            </div>
+
+            <div>
+                <label for="qty">Quantity</label>
+                <input type="number" name="qty" id="qty" min="1" max="10">
+            </div>
+
+            <label for="rate_product">Rate Product:</label>
+            <input type="number" id="rate_product" name="rate_prouct" min="0" max="5" step="0.1"    placeholder="0.0">
+
+            <div class="add_to_cart">
+                <a href="#">
+                <button type="button">Add To Cart</button>
+                </a>
+            </div>
+        </div>
+     
+
+        
+        <div class="product" data-category="accessories">
+            <div class="image_product">
+                <img src="Images/Chargers/c1.jpeg" alt="">
+            </div>
+
+            <div class="name_product">
+                <h3>Samsung cable type C </h3>
+            </div> 
+
+            <div class="price_product">
+                <h4>10$</h4>
+            </div>
+
+            <div class="desc_product">
+                <p>2meter</p>
+            </div>
+
+            <div>
+                <label for="qty">Quantity</label>
+                <input type="number" name="qty" id="qty" min="1" max="10">
+            </div>
+
+            <label for="rate_product">Rate Product:</label>
+            <input type="number" id="rate_product" name="rate_prouct" min="0" max="5" step="0.1"    placeholder="0.0">
+
+            <div class="add_to_cart">
+                <a href="#">
+                <button type="button">Add To Cart</button>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    
+    <script>
+        document.getElementById("search").addEventListener("input", function () {
+            const query = this.value.toLowerCase(); // Convert the search query to lowercase
+            const products = document.querySelectorAll(".product"); // Select all product elements
+        
+            products.forEach((product) => {
+                const name = product.querySelector(".name_product h3").textContent.toLowerCase();
+                const description = product.querySelector(".desc_product p").textContent.toLowerCase();
+                const category = product.getAttribute("data-category").toLowerCase();
+        
+                // Check if the query matches name, category, or description
+                if (
+                    name.includes(query) ||
+                    description.includes(query) ||
+                    category.includes(query)
+                ) {
+                    product.style.display = "block"; // Show matching products
+                } else {
+                    product.style.display = "none"; // Hide non-matching products
+                }
+            });
+        });
+        
+
+    </script>
+</body>
+</html>

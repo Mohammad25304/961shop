@@ -234,11 +234,18 @@ body{
 
 .image_product img {
     width: 100%; /* Ensures the image spans the full width of its container */
-    height: 200px; /* Fixes the height for all images */
-    object-fit: cover; /* Ensures the image scales proportionally without distortion */
-    border-radius: 5px; /* Optional: Adds rounded corners */
+    max-height: 200px; /* Limits the maximum height of the image */
+    object-fit: contain; /* Preserves the aspect ratio and avoids cropping */
+    border-radius: 5px; /* Adds rounded corners */
+    display: block; /* Prevents inline spacing issues */
+    margin: 0 auto; /* Centers the image if needed */
 }
 
+/* Optional hover effect for interactivity */
+.image_product img:hover {
+    transform: scale(1.05); /* Slightly enlarges the image on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhances the shadow on hover */
+}
 
 .name_product h3{
     text-align: left;
@@ -250,73 +257,13 @@ body{
     text-align: left;
 }
 
-.desc_product p{
-    text-align: left;
-}
-
-.qty{
-    text-align: left;
-    font-weight: bold;
-
-}
-
-.rate_product{
-    text-align: left;
-    font-weight: bold;
-}
-
-
-.add_to_cart{
-    display: flex;
-    justify-content: flex-end; 
-}
-
-.add_to_cart button{
-    background-color: #007bff;
-    color: #ffffff;
-    border: none;
-    padding: 10px 20px;
-    font-size: 1rem;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.add_to_cart button:hover {
-    background-color: #0056b3;
-    transform: translateY(-2px);
-}
 
 
 
-div label {
-    font-size: 14px;
-    color: #333;
-    margin-bottom: 5px;
-}
-
-div input[type="number"] {
-    width: 60px;
-    padding: 5px;
-    font-size: 14px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    outline: none;
-    transition: border-color 0.3s;
-}
-
-div input[type="number"]:focus {
-    width: 100px; /* Adjusted for decimals */
-    padding: 5px;
-    font-size: 14px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    outline: none;
-    transition: border-color 0.3s;
-    text-align: center;}
 
 
-    .header {
+    
+.header {
         text-align: center;
         font-size: 2rem; /* Increase header size */
         font-style: oblique;
@@ -324,4 +271,60 @@ div input[type="number"]:focus {
         margin-bottom: 20px; /* Add spacing below the header */
         padding: 20px; /* Add padding around the header */
         color: #333; /* Add a color for better contrast */
+    }
+
+
+  
+
+    
+    .container{
+        
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        min-height: 100vh;
+        gap: 30px;
+    }
+    
+    .product{
+        position: relative;
+        background-color: rgb(202, 198, 204);
+        width: 400px;
+        height: 100%;
+        border-radius: 10px;
+        overflow: hidden;
+        flex-direction: column;
+        justify-content: space-between;
+    
+    }
+  
+    
+    
+    .name_product h3{
+        text-align: center;
+        font-size: 1.5rem;
+        color: #211414;
+    }
+    
+    .explor {
+        display: flex;
+        justify-content: flex-end; 
+    }
+    
+    .explor button{
+        background-color: #007bff;
+        color: #ffffff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 1rem;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    
+    .explor button:hover {
+        background-color: #0056b3;
+        transform: translateY(-2px);
     }
