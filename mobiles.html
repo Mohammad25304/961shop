@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link href="headphones.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // NAVIGATION SCROLLING EFFECT
+
+        let navBar = document.querySelector("nav");
+        navScroll(false);
+
+        document.addEventListener("scroll", () => {
+          navScroll(false);
+        });
+
+        function navScroll(result) {
+          // result = if the user is currently viewing the menu page
+          if (window.scrollY > 0 && !result) {
+            navBar.style.boxShadow = "0 5px 20px rgba(190, 190, 190, 0.15)";
+            navBar.style.backgroundColor = " #edf2fb";
+          } else {
+            navBar.style.boxShadow = "none";
+            navBar.style.backgroundColor = "#edf2fb";
+          }
+        }
+
+        // MENU BAR
+
+        let menuBar = document.querySelector("#menu-bar");
+        let menuPage = document.querySelector("#menu-page");
+        let html = document.querySelector("html");
+
+        // Determine Screen Device: Desktop or Mobile
+        let menuBarStyle = window.getComputedStyle(menuBar);
+        let screenType = "";
+
+        if (menuBarStyle.display === "flex") {
+          screenType = "mobile";
+        } else if (menuBarStyle.display === "none") {
+          screenType = "desktop";
+        } else {
+          console.log("Error: Failed to identify screen type", screenType);
+        }
+
+        // Show/Hide Menu Page
+
+        menuBar.addEventListener("click", () => {
+          menuPage.classList.toggle("active");
+
+          html.style.overflow = menuPage.classList.contains("active")
+            ? "hidden"
+            : "scroll";
+          navScroll(menuPage.classList.contains("active"));
+        });
+
+        // PRODUCT CARDS DISPLAY
+
+        let productContainerWidth = document.querySelector(
+          ".product-cards-container"
+        ).offsetWidth;
+
+        let rootStyles = getComputedStyle(html);
+        let productCardWidth;
+        let productCards;
+
+        if (screenType === "desktop") {
+          productCardWidth = parseInt(
+            rootStyles
+              .getPropertyValue("--product-card-width")
+              .replace("px", "")
+          );
+          productCardsPerRow = Math.floor(
+            productContainerWidth / (productCardWidth + 5)
+          );
+        } else if (screenType === "mobile") {
+          productCardsPerRow = html.offsetWidth > 430 ? 3 : 2;
+          productCardWidth = Math.floor(
+            productContainerWidth / productCardsPerRow - 10
+          );
+        } else {
+          console.log(
+            "Error: Failed to set productCardsPerRow & productCardWidth"
+          );
+        }
+
+        let marginSpacing =
+          (productContainerWidth - productCardsPerRow * productCardWidth) /
+          (productCardsPerRow - 1);
+        let lastElement = productCardsPerRow - 1;
+
+        let sectionLastElement = [];
+        let productSections = document.querySelectorAll(".product-section");
+        productSections.forEach((section) => {
+          productCards = section.querySelectorAll(".product-card");
+
+          for (let i = 0; i < productCardsPerRow; i++) {
+            productCards[i].classList.add("active");
+
+            if (i === lastElement) {
+              productCards[i].style.marginRight = "0px";
+            } else {
+              productCards[i].style.marginRight = `${marginSpacing}px`;
+            }
+          }
+
+          sectionLastElement[section.id] = lastElement;
+        });
+
+        // ADDING ITEMS TO WISHLIST
+
+        let wishListCount;
+        let heartButtons = document.querySelectorAll(".heart-button");
+
+        heartButtons.forEach((button) => {
+          button.addEventListener("click", () => {
+            button.classList.toggle("active");
+
+            wishListCount = accessCounter(".wishlist-link span");
+            wishListCount.innerHTML = document.querySelectorAll(
+              ".heart-button.active"
+            ).length;
+          });
+        });
+
+        // ADDING ITEMS TO CART
+
+        let cartCount;
+        let cartButtons = document.querySelectorAll(
+          ".product-card .blue-button"
+        );
+
+        cartButtons.forEach((button) => {
+          button.addEventListener("click", () => {
+            button.classList.toggle("active");
+
+            let buttonString = button.innerHTML.trim();
+            if (buttonString == "Add To Cart") {
+              button.innerHTML = "Remove";
+            } else if (buttonString == "Remove") {
+              button.innerHTML = "Add To Cart";
+            } else {
+              console.log(
+                "Error: Adding items to cart failed.",
+                buttonString,
+                button.parentElement
+              );
+            }
+
+            cartCount = accessCounter(".cart-link span");
+            cartCount.innerHTML = document.querySelectorAll(
+              ".product-card .blue-button.active"
+            ).length;
+          });
+        });
+
+        function accessCounter(spanElement) {
+          if (screenType === "desktop") {
+            return document
+              .querySelector("#navbar-tools")
+              .querySelector(spanElement);
+          } else if (screenType === "mobile") {
+            return document
+              .querySelector("#menu-tools")
+              .querySelector(spanElement);
+          } else {
+            console.log("Error: accessCounter Function failed.");
+          }
+        }
+
+        // SLIDESHOW
+
+        let slideshowButtons = document.querySelectorAll(".slideshow-button");
+        slideshowButtons.forEach((button) => {
+          button.addEventListener("click", () => {
+            let slideshowSection = button.parentElement.dataset.slideshow;
+            let slideshowContainer = document.querySelector(
+              `#product-section-${slideshowSection}`
+            );
+            let productCards =
+              slideshowContainer.querySelectorAll(".product-card");
+
+            let currentSection = `product-section-${slideshowSection}`;
+            if (button.classList.contains("prev-button")) {
+              if (
+                sectionLastElement[currentSection] <=
+                productCardsPerRow - 1
+              ) {
+                sectionLastElement[currentSection] = productCards.length - 1;
+              } else {
+                sectionLastElement[currentSection]--;
+              }
+            } else if (button.classList.contains("next-button")) {
+              if (
+                sectionLastElement[currentSection] ===
+                productCards.length - 1
+              ) {
+                sectionLastElement[currentSection] = productCardsPerRow - 1;
+              } else {
+                sectionLastElement[currentSection]++;
+              }
+            } else {
+              console.log("Slideshow: Error occurred");
+            }
+
+            for (let i = 0; i < productCards.length; i++) {
+              if (
+                i <= sectionLastElement[currentSection] &&
+                i >=
+                  sectionLastElement[currentSection] - (productCardsPerRow - 1)
+              ) {
+                productCards[i].classList.add("active");
+
+                if (i === sectionLastElement[currentSection]) {
+                  productCards[i].style.marginRight = "0px";
+                } else {
+                  productCards[i].style.marginRight = `${marginSpacing}px`;
+                }
+              } else {
+                productCards[i].classList.remove("active");
+                productCards[i].style.marginRight = "0px";
+              }
+            }
+          });
+        });
+      });
+    </script>
+  </head>
+  </head>
+  <body>
+    <nav>
+      <div id="navbar">
+        <div id="navbar-logo">
+          <img
+            src="./images/961Tech.png"
+            alt="961Tech, Company Ecommerce Logo"
+            width="260"
+            height="130"
+          />
+        </div>
+        <div id="menu-bar">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            class="bi bi-list"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"
+            />
+          </svg>
+        </div>
+        <div id="navbar-links">
+          <ul>
+            <li>
+              <a href="index.html"> Home </a>
+            </li>
+            <li>
+              <a href="products.html"> Products </a>
+              <ul class=" dropdown">
+                <li><a href="Laptop.html">Laptops</a></li>
+                <li><a href="Mobile.html">Mobiles</a></li>
+                <li><a href="Tablets.html">Tablets</a></li>
+                <li><a href="SmartWatch.html">SmartWatch</a></li>
+                <li><a href="headphones.html">Headphones</a></li>
+
+            </ul>
+            </li>
+            <li>
+              <a href="#"> Services </a>
+            </li>
+            <li>
+              <a href="#"> About </a>
+            </li>
+          </ul>
+
+          <div class="search">
+            <label for="search">Search:</label>
+            <input type="search" id="search" name="search" placeholder="Search here...">
+        </div>
+          <div class="collection-tools" id="navbar-tools">
+            <a class="cart-link" href="#">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                fill="currentColor"
+                class="bi bi-bag"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"
+                />
+              </svg>
+              <span>0</span>
+            </a>
+            <a class="wishlist-link" href="#">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                fill="currentColor"
+                class="bi bi-heart"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"
+                />
+              </svg>
+              <span>0</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+
+    
+    <div class="header">
+        <h2>Mobiles</h2>
+
+    </div>
+    <div class="container">
+
+        <div class="product" data-category="mobiles" data-description="High performance mobile">
+            <div class="image_product">
+                <img src="images\mobile collection\01.png" alt="">
+            </div>
+
+            <div class="name_product">
+                <h3>iPhone 15</h3>
+            </div> 
+
+            <div class="price_product">
+                <h4>799$</h4>
+            </div>
+
+            <div class="desc_product">
+                <p>The iPhone 15 delivers flagship features at an accessible price. Powered by the A16 Bionic chip, it offers smooth performance and efficiency. The 6.1-inch Super Retina XDR display ensures vivid colors and sharp details. With Dynamic Island and a new 48MP main camera, this iPhone is perfect for capturing your life in stunning clarity.
+                </p>
+            </div>
+
+            <div>
+                <label for="qty">Quantity</label>
+                <input type="number" name="qty" id="qty" min="1" max="10">
+            </div>
+
+            <label for="rate_product">Rate Product:</label>
+            <input type="number" id="rate_product" name="rate_prouct" min="0" max="5" step="0.1"    placeholder="0.0">
+
+            <div class="add_to_cart">
+                <a href="#">
+                <button type="button">Add To Cart</button>
+                </a>
+            </div>
+        </div>
+
+        <div class="product" data-category="mobiles" data-description="High performance mobile">
+            <div class="image_product">
+                <img src="images/mobile collection/03.png" alt="">
+            </div>
+
+            <div class="name_product">
+                <h3>iPhone 15 Pro</h3>
+            </div> 
+
+            <div class="price_product">
+                <h4>1,099$</h4>
+            </div>
+
+            <div class="desc_product">
+                <p>Introducing the iPhone 15 Pro, a marvel of d all-new A17 Pro chip, it offers groundbreaking perfor.</p>
+            </div>
+
+            <div>
+                <label for="qty">Quantity</label>
+                <input type="number" name="qty" id="qty" min="1" max="10">
+            </div>
+
+            <label for="rate_product">Rate Product:</label>
+            <input type="number" id="rate_product" name="rate_prouct" min="0" max="5" step="0.1"    placeholder="0.0">
+
+            <div class="add_to_cart">
+                <a href="#">
+                <button type="button">Add To Cart</button>
+                </a>
+            </div>
+        </div>
+
+
+
+        <div class="product" data-category="mobiles" data-description="High performance mobile">
+            <div class="image_product">
+                <img src="images/mobile collection/02.png" alt="">
+            </div>
+
+            <div class="name_product">
+                <h3>iPhone 15 Pro Max
+                </h3>
+            </div> 
+
+            <div class="price_product">
+                <h4>1,199$</h4>
+            </div>
+
+            <div class="desc_product">
+                <p>Experience the ultimate in smartphone technology with the iPhone 15 Pro Max. Featuring a stunning 6.7-inch Super Retina XDR display, the A17 Pro chip for lightning-fast performance, and an upgraded triple-camera system with 5x telephoto zoom. This device is built with aerospace-grade titanium for unparalleled durability and lightweight design.</p>
+            </div>
+
+            <div>
+                <label for="qty">Quantity</label>
+                <input type="number" name="qty" id="qty" min="1" max="10">
+            </div>
+
+            <label for="rate_product">Rate Product:</label>
+            <input type="number" id="rate_product" name="rate_prouct" min="0" max="5" step="0.1"    placeholder="0.0">
+
+            <div class="add_to_cart">
+                <a href="#">
+                <button type="button">Add To Cart</button>
+                </a>
+            </div>
+        </div>
+
+
+        <div class="product">
+            <div class="image_product" data-category="mobiles" data-description="High performance mobile">
+                <img src="images/mobile collection/04.png" alt="">
+            </div>
+
+            <div class="name_product">
+                <h3>iPhone 14 Pro</h3>
+            </div> 
+
+            <div class="price_product">
+                <h4>799$</h4>
+            </div>
+
+            <div class="desc_product">
+                <p>The iPhone 14 Pro sets a new standard with its 48MP main camera, always-on 6.1-inch Super Retina XDR display, and Dynamic Island for smarter interactions. Powered by the A16 Bionic chip, it combines exceptional performance with advanced features like ProRAW and ProMotion for an immersive experience.</p>
+            </div>
+
+            <div>
+                <label for="qty">Quantity</label>
+                <input type="number" name="qty" id="qty" min="1" max="10">
+            </div>
+
+            <label for="rate_product">Rate Product:</label>
+            <input type="number" id="rate_product" name="rate_prouct" min="0" max="5" step="0.1"    placeholder="0.0">
+
+            <div class="add_to_cart">
+                <a href="#">
+                <button type="button">Add To Cart</button>
+                </a>
+            </div>
+        </div>
+
+
+        <div class="product">
+            <div class="image_product" data-category="mobiles" data-description="High performance mobile">
+                <img src="images/mobile collection/05.png" alt="">
+            </div>
+
+            <div class="name_product">
+                <h3>Xiaomi Redmi Note 13 Pro</h3>
+            </div> 
+
+            <div class="price_product">
+                <h4>280$</h4>
+            </div>
+
+            <div class="desc_product">
+                <p>A mid-range phone offering excellent value:
+                    6.67-inch AMOLED display with 120Hz refresh rate.
+                    MediaTek Dimensity 7200-Ultra processor for smooth performance.
+                    200 MP primary camera and 16 MP selfie camera.
+                    5100 mAh battery with 67W fast charging.</p>
+            </div>
+
+            <div>
+                <label for="qty">Quantity</label>
+                <input type="number" name="qty" id="qty" min="1" max="10">
+            </div>
+
+            <label for="rate_product">Rate Product:</label>
+            <input type="number" id="rate_product" name="rate_prouct" min="0" max="5" step="0.1"    placeholder="0.0">
+
+            <div class="add_to_cart">
+                <a href="#">
+                <button type="button">Add To Cart</button>
+                </a>
+            </div>
+        </div>
+
+
+        <div class="product" data-category="mobiles" data-description="High performance mobile">
+            <div class="image_product">
+                <img src="images/mobile collection/06.png" alt="">
+            </div>
+
+            <div class="name_product">
+                <h3> Poco F5 </h3>
+            </div> 
+
+            <div class="price_product">
+                <h4>350$</h4>
+            </div>
+
+            <div class="desc_product">
+                <p>A high-performance smartphone for gamers and multitaskers:
+                    6.67-inch AMOLED display with 120Hz refresh rate and Dolby Vision support.
+                    Snapdragon 7+ Gen 2 chipset for flagship-level performance.
+                    64 MP primary camera with OIS and 5000 mAh battery.
+                    67W fast charging and LiquidCool Technology 2.0.
+                    </p>
+            </div>
+
+            <div>
+                <label for="qty">Quantity</label>
+                <input type="number" name="qty" id="qty" min="1" max="10">
+            </div>
+
+            <label for="rate_product">Rate Product:</label>
+            <input type="number" id="rate_product" name="rate_prouct" min="0" max="5" step="0.1"    placeholder="0.0">
+
+            <div class="add_to_cart">
+                <a href="#">
+                <button type="button">Add To Cart</button>
+                </a>
+            </div>
+        </div>
+
+
+
+        <div class="product">
+            <div class="image_product" data-category="mobiles" data-description="High performance mobile">
+                <img src="images/mobile collection/07.png" alt="">
+            </div>
+
+            <div class="name_product">
+                <h3>Xiaomi 12T</h3>
+            </div> 
+
+            <div class="price_product">
+                <h4>500$</h4>
+            </div>
+
+            <div class="desc_product">
+                <p>A premium device for photography enthusiasts:
+                    6.67-inch CrystalRes AMOLED display.
+                    MediaTek Dimensity 8100-Ultra processor.
+                    108 MP main camera with 8K video recording.
+                    5000 mAh battery with 120W HyperCharge (100% in 19 minutes).</p>
+            </div>
+
+            <div>
+                <label for="qty">Quantity</label>
+                <input type="number" name="qty" id="qty" min="1" max="10">
+            </div>
+
+            <label for="rate_product">Rate Product:</label>
+            <input type="number" id="rate_product" name="rate_prouct" min="0" max="5" step="0.1"    placeholder="0.0">
+
+            <div class="add_to_cart">
+                <a href="#">
+                <button type="button">Add To Cart</button>
+                </a>
+            </div>
+        </div>
+
+
+
+        <div class="product">
+            <div class="image_product "  data-category="mobiles" data-description="High performance mobile">
+                <img src="images/mobile collection/08.png" alt="">
+            </div>
+
+            <div class="name_product">
+                <h3> Xiaomi 13 Pro</h3>
+            </div> 
+
+            <div class="price_product">
+                <h4>1,099$</h4>
+            </div>
+
+            <div class="desc_product">
+                <p>A flagship smartphone with cutting-edge features:
+                    6.73-inch AMOLED display with 120Hz refresh rate.
+                    Powered by Snapdragon 8 Gen 2 chipset.
+                    50 MP triple-camera system co-engineered with Leica for professional photography.
+                    4820 mAh battery with 120W fast charging.
+                    </p>
+            </div>
+
+            <div>
+                <label for="qty">Quantity</label>
+                <input type="number" name="qty" id="qty" min="1" max="10">
+            </div>
+
+            <label for="rate_product">Rate Product:</label>
+            <input type="number" id="rate_product" name="rate_prouct" min="0" max="5" step="0.1"    placeholder="0.0">
+
+            <div class="add_to_cart">
+                <a href="#">
+                <button type="button">Add To Cart</button>
+                </a>
+            </div>
+        </div>
+
+
+
+        <div class="product"  data-category="mobiles" data-description="High performance mobile">
+            <div class="image_product">
+                <img src="images/mobile collection/09.png" alt="">
+            </div>
+
+            <div class="name_product">
+                <h3>Samsung Galaxy A73 5G</h3>
+            </div> 
+
+            <div class="price_product">
+                <h4>499$</h4>
+            </div>
+
+            <div class="desc_product">
+                <p>A top-tier A-series phone with flagship-like features:
+                    6.7-inch Super AMOLED+ display with 120Hz refresh rate.
+                    Snapdragon 778G chipset for smooth performance.
+                    108 MP quad-camera setup for high-resolution photography.
+                    5000 mAh battery with 25W fast charging.
+                    Sleek design and water resistance (IP67).</p>
+            </div>
+
+            <div>
+                <label for="qty">Quantity</label>
+                <input type="number" name="qty" id="qty" min="1" max="10">
+            </div>
+
+            <label for="rate_product">Rate Product:</label>
+            <input type="number" id="rate_product" name="rate_prouct" min="0" max="5" step="0.1"    placeholder="0.0">
+
+            <div class="add_to_cart">
+                <a href="#">
+                <button type="button">Add To Cart</button>
+                </a>
+            </div>
+        </div>
+
+
+
+        <div class="product" data-category="mobiles" data-description="High performance mobile">
+            <div class="image_product">
+                <img src="images/mobile collection/10.png" alt="">
+            </div>
+
+            <div class="name_product">
+                <h3>Samsung Galaxy A54 5G
+                </h3>
+            </div> 
+
+            <div class="price_product">
+                <h4>449$</h4>
+            </div>
+
+            <div class="desc_product">
+                <p>A mid-range powerhouse with modern features:
+                    6.4-inch Super AMOLED display with 120Hz refresh rate.
+                    Exynos 1380 processor for efficient multitasking.
+                    50 MP primary camera with OIS for clear photos and videos.
+                    5000 mAh battery with 25W fast charging.
+                    Premium glass back design for durability.</p>
+            </div>
+
+            <div>
+                <label for="qty">Quantity</label>
+                <input type="number" name="qty" id="qty" min="1" max="10">
+            </div>
+
+            <label for="rate_product">Rate Product:</label>
+            <input type="number" id="rate_product" name="rate_prouct" min="0" max="5" step="0.1"    placeholder="0.0">
+
+            <div class="add_to_cart">
+                <a href="#">
+                <button type="button">Add To Cart</button>
+                </a>
+            </div>
+        </div>
+
+
+
+        <div class="product" data-category="mobiles" data-description="High performance mobile">
+            <div class="image_product">
+                <img src="images/mobile collection/11.png" alt="">
+            </div>
+
+            <div class="name_product">
+                <h3> Samsung Galaxy A34 5G</h3>
+            </div> 
+
+            <div class="price_product">
+                <h4>299$</h4>
+            </div>
+
+            <div class="desc_product">
+                <p>An affordable option with balanced performance:
+                    6.6-inch Super AMOLED display with 120Hz refresh rate.
+                    MediaTek Dimensity 1080 chipset for reliable performance.
+                    48 MP main camera with OIS for detailed photography.
+                    5000 mAh battery with 25W fast charging.
+                    Water resistance (IP67) and sleek polycarbonate design.</p>
+            </div>
+
+            <div>
+                <label for="qty">Quantity</label>
+                <input type="number" name="qty" id="qty" min="1" max="10">
+            </div>
+
+            <label for="rate_product">Rate Product:</label>
+            <input type="number" id="rate_product" name="rate_prouct" min="0" max="5" step="0.1"    placeholder="0.0">
+
+            <div class="add_to_cart">
+                <a href="#">
+                <button type="button">Add To Cart</button>
+                </a>
+            </div>
+        </div>
+
+
+
+        <div class="product">
+            <div class="image_product">
+                <img src="images/mobile collection/12.png" alt="">
+            </div>
+
+            <div class="name_product">
+                <h3> Samsung Galaxy A14 5G</h3>
+            </div> 
+
+            <div class="price_product">
+                <h4>199$</h4>
+            </div>
+
+            <div class="desc_product">
+                <p>A budget-friendly 5G smartphone for everyday use:
+                    6.6-inch PLS LCD display with 90Hz refresh rate.
+                    Powered by Exynos 1330 or MediaTek Dimensity 700 chipset.
+                    50 MP primary camera for decent photo quality.
+                    5000 mAh battery with 15W charging.
+                    Minimalistic design with a focus on durability.</p>
+            </div>
+
+            <div>
+                <label for="qty">Quantity</label>
+                <input type="number" name="qty" id="qty" min="1" max="10">
+            </div>
+
+            <label for="rate_product">Rate Product:</label>
+            <input type="number" id="rate_product" name="rate_prouct" min="0" max="5" step="0.1"    placeholder="0.0">
+
+            <div class="add_to_cart">
+                <a href="#">
+                <button type="button">Add To Cart</button>
+                </a>
+            </div>
+        </div>
+     
+    </div>
+
+
+    <script>
+        // JavaScript to implement the search functionality
+document.getElementById("search").addEventListener("input", function () {
+    const query = this.value.toLowerCase(); // Get the search query in lowercase
+    const products = document.querySelectorAll(".product"); // Select all products
+
+    products.forEach((product) => {
+        const name = product.querySelector(".name_product h3").textContent.toLowerCase();
+        const description = product.querySelector(".desc_product p").textContent.toLowerCase();
+
+        // Check if the name or description includes the query
+        if (name.includes(query) || description.includes(query)) {
+            product.style.display = "block"; // Show the product
+        } else {
+            product.style.display = "none"; // Hide the product
+        }
+    });
+});
+
+    </script>
+    
+</body>
+</html>  
