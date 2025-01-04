@@ -317,456 +317,105 @@
     </nav>
 
 
-    <div class="header">
-        <h2>PhoneCases</h2>
+  <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // Fetch products from JSON file and display them
+        fetch("products.json")
+          .then(response => response.json())
+          .then(products => {
+            displayProducts(products);
+          })
+          .catch(error => console.log("Error fetching products:", error));
 
-    </div>
-    <div class="container">
+        // Function to display products
+        function displayProducts(products) {
+          const productContainer = document.querySelector("#product-list"); // Assuming there's a div to hold the products
 
-        <div class="product" id="product-list" data-category="accessories">
-            <div class="image_product">
-                <img src="Images/PhoneCases/1.webp" alt="">
-            </div>
+          products.forEach(product => {
+            const productDiv = document.createElement("div");
+            productDiv.classList.add("product");
+            productDiv.setAttribute("data-category", product.category); // Set category as data-attribute
 
-            <div class="name_product">
-                <h3>iPhone 15 Case</h3>
-            </div> 
-
-            <div class="price_product">
-                <h4>11.99$</h4>
-            </div>
-
-            <div class="desc_product">
-                <p>Compatible with MagSafe, Military-Grade Protection, Yellowing Resistant, Scratch-Resistant Back, Magnetic Phone Case for iPhone 15, Classic Series, Clear</p>
-            </div>
-
-            <div>
+            productDiv.innerHTML = `
+              <div class="image_product">
+                <img src="${product.image}" alt="${product.name}">
+              </div>
+              <div class="name_product">
+                <h3>${product.name}</h3>
+              </div>
+              <div class="price_product">
+                <h4>${product.price}$</h4>
+              </div>
+              <div class="desc_product">
+                <p>${product.description}</p>
+              </div>
+              <div>
                 <label for="qty">Quantity</label>
                 <input type="number" name="qty" id="qty" min="1" max="10">
-            </div>
-
-            <label for="rate_product">Rate Product:</label>
-            <input type="number" id="rate_product" name="rate_prouct" min="0" max="5" step="0.1"    placeholder="0.0">
-
-            <div class="add_to_cart">
+              </div>
+              <label for="rate_product">Rate Product:</label>
+              <input type="number" id="rate_product" name="rate_prouct" min="0" max="5" step="0.1" placeholder="0.0">
+              <div class="add_to_cart">
                 <a href="#">
-                <button type="button">Add To Cart</button>
+                  <button type="button">Add To Cart</button>
                 </a>
-            </div>
-        </div>
-     
+              </div>
+            `;
 
-        
-        <div class="product" id="product-list" data-category="accessories">
-            <div class="image_product">
-                <img src="Images/PhoneCases/2.webp" alt="">
-            </div>
+            productContainer.appendChild(productDiv);
+          });
+        }
 
-            <div class="name_product">
-                <h3> iPhone 15 Phone Case </h3>
-            </div> 
-
-            <div class="price_product">
-                <h4>25$</h4>
-            </div>
-
-            <div class="desc_product">
-                <p>Case Military Grade Shockproof Protection Hard Phonecase - Dual Layer Matte Textured Drop Proof Rugged Protective Cover - 6.1 Inch Black</p>
-            </div>
-
-            <div>
-                <label for="qty">Quantity</label>
-                <input type="number" name="qty" id="qty" min="1" max="10">
-            </div>
-
-            <label for="rate_product">Rate Product:</label>
-            <input type="number" id="rate_product" name="rate_prouct" min="0" max="5" step="0.1"    placeholder="0.0">
-
-            <div class="add_to_cart">
-                <a href="#">
-                <button type="button">Add To CaGalaxy A73 Casert</button>
-                </a>
-            </div>
-        </div>
-
-
-        
-        <div class="product" id="product-list" data-category="accessories">
-            <div class="image_product">
-                <img src="Images/PhoneCases/3.jpg" alt="">
-            </div>
-
-            <div class="name_product">
-                <h3>Galaxy A73 Case</h3>
-            </div> 
-
-            <div class="price_product">
-                <h4>10$</h4>
-            </div>
-
-            <div class="desc_product">
-                <p> Drop Tested Military Grade Cover with Magnetic Ring Kickstand,Protective Phone Case for Samsung Galaxy A73 Pine Green
-                    </p>
-            </div>
-
-            <div>
-                <label for="qty">Quantity</label>
-                <input type="number" name="qty" id="qty" min="1" max="10">
-            </div>
-
-            <label for="rate_product">Rate Product:</label>
-            <input type="number" id="rate_product" name="rate_prouct" min="0" max="5" step="0.1"    placeholder="0.0">
-
-            <div class="add_to_cart">
-                <a href="#">
-                <button type="button">Add To Cart</button>
-                </a>
-            </div>
-        </div>
-
-
-
-        
-        
-        <div class="product" id="product-list" data-category="accessories">
-            <div class="image_product">
-                <img src="Images/PhoneCases/4.jpg" alt="">
-            </div>
-
-            <div class="name_product">
-                <h3>Shockproof Case for Samsung Galaxy A73 5G</h3>
-            </div> 
-
-            <div class="price_product">
-                <h4>25$</h4>
-            </div>
-
-            <div class="desc_product">
-                <p>hockproof Case for Samsung Galaxy A73 5G, with 360° Rotatable Ring Holder Magnetic Kickstand, Plating Rose Gold Edge Slim Soft Protective Cover, Green
-                    </p>
-            </div>
-
-            <div>
-                <label for="qty">Quantity</label>
-                <input type="number" name="qty" id="qty" min="1" max="10">
-            </div>
-
-            <label for="rate_product">Rate Product:</label>
-            <input type="number" id="rate_product" name="rate_prouct" min="0" max="5" step="0.1"    placeholder="0.0">
-
-            <div class="add_to_cart">
-                <a href="#">
-                <button type="button">Add To Cart</button>
-                </a>
-            </div>
-        </div>
-
-
-        <div class="product" id="product-list" data-category="accessories">
-            <div class="image_product">
-                <img src="Images/PhoneCases/5.jpg" alt="">
-            </div>
-
-            <div class="name_product">
-                <h3>JETech Case for Samsung Galaxy A54 5G</h3>
-            </div> 
-
-            <div class="price_product">
-                <h4>8$</h4>
-            </div>
-
-            <div class="desc_product">
-                <p>JETech Case for Samsung Galaxy A54 5G 6.4-Inch, Non-Yellowing Shockproof Bumper Protective Phone Cover, Anti-Scratch Hard PC Back (Clear)
-                    </p>
-            </div>
-
-            <div>
-                <label for="qty">Quantity</label>
-                <input type="number" name="qty" id="qty" min="1" max="10">
-            </div>
-
-            <label for="rate_product">Rate Product:</label>
-            <input type="number" id="rate_product" name="rate_prouct" min="0" max="5" step="0.1"    placeholder="0.0">
-
-            <div class="add_to_cart">
-                <a href="#">
-                <button type="button">Add To Cart</button>
-                </a>
-            </div>
-        </div>
-
-
-
-        <div class="product" id="product-list" data-category="accessories">
-            <div class="image_product">
-                <img src="Images/PhoneCases/6.jpg" alt="">
-            </div>
-
-            <div class="name_product">
-                <h3>Samsung Galaxy A34 5G Case</h3>
-            </div> 
-
-            <div class="price_product">
-                <h4>6$</h4>
-            </div>
-
-            <div class="desc_product">
-                <p>AK for Samsung Galaxy A34 5G Case, Stylish Slim Liquid Silicone Full-Body Protective Cover for Samsung Galaxy A34 5G Phone Case (Light Cyan)
-                    </p>
-            </div>
-
-            <div>
-                <label for="qty">Quantity</label>
-                <input type="number" name="qty" id="qty" min="1" max="10">
-            </div>
-
-            <label for="rate_product">Rate Product:</label>
-            <input type="number" id="rate_product" name="rate_prouct" min="0" max="5" step="0.1"    placeholder="0.0">
-
-            <div class="add_to_cart">
-                <a href="#">
-                <button type="button">Add To Cart</button>
-                </a>
-            </div>
-        </div>
-
-
-
-        <div class="product" id="product-list" data-category="accessories">
-            <div class="image_product">
-                <img src="Images/PhoneCases/7.jpg" alt="">
-            </div>
-
-            <div class="name_product">
-                <h3>Samsung Galaxy A34 5G Phone Case</h3>
-            </div> 
-
-            <div class="price_product">
-                <h4>19$</h4>
-            </div>
-
-            <div class="desc_product">
-                <p> Waterproof Case with Built-in Screen Protector, Full Body Dustproof Shockproof Rugged Heavy Duty Protection Case with Cell Phone Ring Holder for Samsung A34 5G
-                    </p>
-            </div>
-
-            <div>
-                <label for="qty">Quantity</label>
-                <input type="number" name="qty" id="qty" min="1" max="10">
-            </div>
-
-            <label for="rate_product">Rate Product:</label>
-            <input type="number" id="rate_product" name="rate_prouct" min="0" max="5" step="0.1"    placeholder="0.0">
-
-            <div class="add_to_cart">
-                <a href="#">
-                <button type="button">Add To Cart</button>
-                </a>
-            </div>
-        </div>
-
-
-
-        <div class="product" id="product-list" data-category="accessories">
-            <div class="image_product">
-                <img src="Images/PhoneCases/8.webp" alt="">
-            </div>
-
-            <div class="name_product">
-                <h3>Xiaomi 13 Pro Case Cover</h3>
-            </div> 
-
-            <div class="price_product">
-                <h4>15$</h4>
-            </div>
-
-            <div class="desc_product">
-                <p>Xiaomi mi 13 Pro Phone Case with Slide Camera Protector Cover Hard PC TPU Slim Rugged Shockproof Protective Phone Case for Xiaomi mi 13 Pro (Blue)
-                    </p>
-            </div>
-
-            <div>
-                <label for="qty">Quantity</label>
-                <input type="number" name="qty" id="qty" min="1" max="10">
-            </div>
-
-            <label for="rate_product">Rate Product:</label>
-            <input type="number" id="rate_product" name="rate_prouct" min="0" max="5" step="0.1"    placeholder="0.0">
-
-            <div class="add_to_cart">
-                <a href="#">
-                <button type="button">Add To Cart</button>
-                </a>
-            </div>
-        </div>
-
-
-
-        <div class="product" id="product-list" data-category="accessories">
-            <div class="image_product">
-                <img src="Images/PhoneCases/9.jpg" alt="">
-            </div>
-
-            <div class="name_product">
-                <h3>Case Compatible with Xiao Mi Poco F5 PRO 5G</h3>
-            </div> 
-
-            <div class="price_product">
-                <h4>12$</h4>
-            </div>
-
-            <div class="desc_product">
-                <p>Case Compatible with Xiao Mi Poco F5 PRO 5G, [Droproof] [Sweat-Proof] [Fingerprint-Proof] Shockproof Protective Phone Case Fits Xiao Mi Poco F5 PRO. Clear Black
-                    </p>
-            </div>
-
-            <div>
-                <label for="qty">Quantity</label>
-                <input type="number" name="qty" id="qty" min="1" max="10">
-            </div>
-
-            <label for="rate_product">Rate Product:</label>
-            <input type="number" id="rate_product" name="rate_prouct" min="0" max="5" step="0.1"    placeholder="0.0">
-
-            <div class="add_to_cart">
-                <a href="#">
-                <button type="button">Add To Cart</button>
-                </a>
-            </div>
-        </div>
-
-
-        <div class="product" id="product-list" data-category="accessories">
-          <div class="image_product">
-              <img src="Images/PhoneCases/10.webp" alt="">
-          </div>
-
-          <div class="name_product">
-              <h3>ESR for iPhone 14 Pro Case</h3>
-          </div> 
-
-          <div class="price_product">
-              <h4>10$</h4>
-          </div>
-
-          <div class="desc_product">
-              <p>     ESR for iPhone 14 Pro Case, Compatible with MagSafe, Shockproof Military-Grade Protection, Yellowing Resistant, Magnetic Phone Case for iPhone 14 Pro, Classic Hybrid Case (HaloLock), Clear    </p>
-          </div>
-
-          <div>
-              <label for="qty">Quantity</label>
-              <input type="number" name="qty" id="qty" min="1" max="10">
-          </div>
-
-          <label for="rate_product">Rate Product:</label>
-          <input type="number" id="rate_product" name="rate_prouct" min="0" max="5" step="0.1"    placeholder="0.0">
-
-          <div class="add_to_cart">
-              <a href="#">
-              <button type="button">Add To Cart</button>
-              </a>
-          </div>
-      </div>
-
-
-
-      <div class="product" id="product-list" data-category="accessories">
-        <div class="image_product">
-            <img src="Images/PhoneCases/11.jpg" alt="">
-        </div>
-
-        <div class="name_product">
-            <h3>Xiaomi 12T Pro Case Shockproof Pink</h3>
-        </div> 
-
-        <div class="price_product">
-            <h4>18$</h4>
-        </div>
-
-        <div class="desc_product">
-            <p>Xiaomi 12T Pro Phone Case Thin Hard PC Xiaomi 12T Protective Case Anti-Fingerprint Cover with Ultimate Delicate Touch Feeling (White)</p>
-        </div>
-
-        <div>
-            <label for="qty">Quantity</label>
-            <input type="number" name="qty" id="qty" min="1" max="10">
-        </div>
-
-        <label for="rate_product">Rate Product:</label>
-        <input type="number" id="rate_product" name="rate_prouct" min="0" max="5" step="0.1"    placeholder="0.0">
-
-        <div class="add_to_cart">
-            <a href="#">
-            <button type="button">Add To Cart</button>
-            </a>
-        </div>
-    </div>
-
-
-
-    <div class="product" id="product-list" data-category="accessories">
-      <div class="image_product">
-          <img src="Images/PhoneCases/12.jpg" alt="">
-      </div>
-
-      <div class="name_product">
-          <h3>JETech Case for Samsung Galaxy A14</h3>
-      </div> 
-
-      <div class="price_product">
-          <h4>10$</h4>
-      </div>
-
-      <div class="desc_product">
-          <p>JETech Case for Samsung Galaxy A14 4G/5G 6.6-Inch, Non-Yellowing Shockproof Bumper Protective Phone Cover, Anti-Scratch Hard PC Back (Clear)</p>
-      </div>
-
-      <div>
-          <label for="qty">Quantity</label>
-          <input type="number" name="qty" id="qty" min="1" max="10">
-      </div>
-
-      <label for="rate_product">Rate Product:</label>
-      <input type="number" id="rate_product" name="rate_prouct" min="0" max="5" step="0.1"    placeholder="0.0">
-
-      <div class="add_to_cart">
-          <a href="#">
-          <button type="button">Add To Cart</button>
-          </a>
-      </div>
-  </div>
-
-
-    </div>
-
-
-
-
-    <script>
+        // Search functionality for products
         document.getElementById("search").addEventListener("input", function () {
-            const query = this.value.toLowerCase(); // Convert the search query to lowercase
-            const products = document.querySelectorAll(".product"); // Select all product elements
-        
-            products.forEach((product) => {
-                const name = product.querySelector(".name_product h3").textContent.toLowerCase();
-                const description = product.querySelector(".desc_product p").textContent.toLowerCase();
-                const category = product.getAttribute("data-category").toLowerCase();
-        
-                // Check if the query matches name, category, or description
-                if (
-                    name.includes(query) ||
-                    description.includes(query) ||
-                    category.includes(query)
-                ) {
-                    product.style.display = "block"; // Show matching products
-                } else {
-                    product.style.display = "none"; // Hide non-matching products
-                }
-            });
-        });
-        
+          const query = this.value.toLowerCase();
+          const products = document.querySelectorAll(".product");
 
+          products.forEach(product => {
+            const name = product.querySelector(".name_product h3").textContent.toLowerCase();
+            const description = product.querySelector(".desc_product p").textContent.toLowerCase();
+            const category = product.getAttribute("data-category").toLowerCase();
+
+            if (name.includes(query) || description.includes(query) || category.includes(query)) {
+              product.style.display = "block";
+            } else {
+              product.style.display = "none";
+            }
+          });
+        });
+      });
     </script>
+  </head>
+  <body>
+    <nav>
+      <!-- Add your navbar content here -->
+    </nav>
+
+    <div class="header">
+      <h2>PhoneCases</h2>
+    </div>
+
+    <div class="container">
+      <div id="product-list" class="product-list">
+        <!-- Products will be dynamically inserted here -->
+      </div>
+    </div>
+  </head>
+  <body>
+    <nav>
+      <!-- Add your navbar content here -->
+    </nav>
+
+    <div class="header">
+      <h2>PhoneCases</h2>
+    </div>
+
+    <div class="container">
+      <div id="product-list" class="product-list">
+        <!-- Products will be dynamically inserted here -->
+      </div>
+    </div>
+
 
 </body>
 </html>

@@ -219,10 +219,18 @@ body{
     gap: 30px;
 }
 
+
+#product-list {
+    display: flex; /* Makes the product list a flex container */
+    flex-wrap: wrap; /* Allows products to wrap onto new lines if necessary */
+  }
 .product{
+    display: inline-block;
+    text-align: center;
     position: relative;
     background-color: rgb(202, 198, 204);
     width: 400px;
+    margin: 40px;
     height: 100%;
     border-radius: 10px;
     overflow: hidden;

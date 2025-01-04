@@ -1,0 +1,135 @@
+[
+        {
+            "id": 1,
+            "name": "iPhone 15 Case",
+            "price": "11.99$",
+            "category": "accessories",
+            "image": "Images/PhoneCases/1.webp",
+            "quantity": 10,
+            "description": "Compatible with MagSafe, Military-Grade Protection, Yellowing Resistant, Scratch-Resistant Back, Magnetic Phone Case for iPhone 15, Classic Series, Clear",
+            "rating": null,
+            "is_bundle": false
+          },
+          {
+            "id": 2,
+            "name": "iPhone 15 Phone Case",
+            "price": "25$",
+            "category": "accessories",
+            "image": "Images/PhoneCases/2.webp",
+            "quantity": 10,
+            "description": "Case Military Grade Shockproof Protection Hard Phonecase - Dual Layer Matte Textured Drop Proof Rugged Protective Cover - 6.1 Inch Black",
+            "rating": null,
+            "is_bundle": false
+          },
+          {
+            "id": 3,
+            "name": "Galaxy A73 Case",
+            "price": "10$",
+            "category": "accessories",
+            "image": "Images/PhoneCases/3.jpg",
+            "quantity": 10,
+            "description": "Drop Tested Military Grade Cover with Magnetic Ring Kickstand,Protective Phone Case for Samsung Galaxy A73 Pine Green",
+            "rating": null,
+            "is_bundle": false
+          },
+          {
+            "id": 4,
+            "name": "Shockproof Case for Samsung Galaxy A73 5G",
+            "price": "25$",
+            "category": "accessories",
+            "image": "Images/PhoneCases/4.jpg",
+            "quantity": 10,
+            "description": "Shockproof Case for Samsung Galaxy A73 5G, with 360\u00b0 Rotatable Ring Holder Magnetic Kickstand, Plating Rose Gold Edge Slim Soft Protective Cover, Green",
+            "rating": null,
+            "is_bundle": false
+          },
+          {
+            "id": 5,
+            "name": "JETech Case for Samsung Galaxy A54 5G",
+            "price": "8$",
+            "category": "accessories",
+            "image": "Images/PhoneCases/5.jpg",
+            "quantity": 10,
+            "description": "JETech Case for Samsung Galaxy A54 5G 6.4-Inch, Non-Yellowing Shockproof Bumper Protective Phone Cover, Anti-Scratch Hard PC Back (Clear)",
+            "rating": null,
+            "is_bundle": false
+          },
+          {
+            "id": 6,
+            "name": "Samsung Galaxy A34 5G Case",
+            "price": "6$",
+            "category": "accessories",
+            "image": "Images/PhoneCases/6.jpg",
+            "quantity": 10,
+            "description": "AK for Samsung Galaxy A34 5G Case, Stylish Slim Liquid Silicone Full-Body Protective Cover for Samsung Galaxy A34 5G Phone Case (Light Cyan)",
+            "rating": null,
+            "is_bundle": false
+          },
+          {
+            "id": 7,
+            "name": "Samsung Galaxy A34 5G Phone Case",
+            "price": "19$",
+            "category": "accessories",
+            "image": "Images/PhoneCases/7.jpg",
+            "quantity": 10,
+            "description": "Waterproof Case with Built-in Screen Protector, Full Body Dustproof Shockproof Rugged Heavy Duty Protection Case with Cell Phone Ring Holder for Samsung A34 5G",
+            "rating": null,
+            "is_bundle": false
+          },
+          {
+            "id": 8,
+            "name": "Xiaomi 13 Pro Case Cover",
+            "price": "15$",
+            "category": "accessories",
+            "image": "Images/PhoneCases/8.webp",
+            "quantity": 10,
+            "description": "Xiaomi mi 13 Pro Phone Case with Slide Camera Protector Cover Hard PC TPU Slim Rugged Shockproof Protective Phone Case for Xiaomi mi 13 Pro (Blue)",
+            "rating": null,
+            "is_bundle": false
+          },
+          {
+            "id": 9,
+            "name": "Case Compatible with Xiao Mi Poco F5 PRO 5G",
+            "price": "12$",
+            "category": "accessories",
+            "image": "Images/PhoneCases/9.jpg",
+            "quantity": 10,
+            "description": "Case Compatible with Xiao Mi Poco F5 PRO 5G, [Droproof] [Sweat-Proof] [Fingerprint-Proof] Shockproof Protective Phone Case Fits Xiao Mi Poco F5 PRO. Clear Black",
+            "rating": null,
+            "is_bundle": false
+          },
+          {
+            "id": 10,
+            "name": "ESR for iPhone 14 Pro Case",
+            "price": "10$",
+            "category": "accessories",
+            "image": "Images/PhoneCases/10.webp",
+            "quantity": 10,
+            "description": "ESR for iPhone 14 Pro Case, Compatible with MagSafe, Shockproof Military-Grade Protection, Yellowing Resistant, Magnetic Phone Case for iPhone 14 Pro, Classic Hybrid Case (HaloLock), Clear",
+            "rating": null,
+            "is_bundle": false
+          },
+          {
+            "id": 11,
+            "name": "Xiaomi 12T Pro Case Shockproof Pink",
+            "price": "18$",
+            "category": "accessories",
+            "image": "Images/PhoneCases/11.jpg",
+            "quantity": 10,
+            "description": "Xiaomi 12T Pro Phone Case Thin Hard PC Xiaomi 12T Protective Case Anti-Fingerprint Cover with Ultimate Delicate Touch Feeling (White)",
+            "rating": null,
+            "is_bundle": false
+          },
+          {
+            "id": 12,
+            "name": "JETech Case for Samsung Galaxy A14",
+            "price": "10$",
+            "category": "accessories",
+            "image": "Images/PhoneCases/12.jpg",
+            "quantity": 10,
+            "description": "JETech Case for Samsung Galaxy A14 4G/5G 6.6-Inch, Non-Yellowing Shockproof Bumper Protective Phone Cover, Anti-Scratch Hard PC Back (Clear)",
+            "rating": null,
+            "is_bundle": false
+          }
+            
+    ]
