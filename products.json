@@ -5,7 +5,7 @@
         "price": 1099,
         "category":"Electronics",
         "image": "images/laptop collection/01.png",
-        "quantity": 20,
+        "quantity": 100,
         "description": "The MacBook Air (M2) features Apple's powerful M2 chip, offering exceptional performance, an improved 13.6-inch Liquid Retina display, a larger trackpad, and a new design that is thinner and lighter. It's perfect for everyday tasks, light photo/video editing, and productivity.",
         "rating": 4.5,
         "is_bundle": false
@@ -16,7 +16,7 @@
         "price": 1299,
         "category":"Electronics",
         "image": "images/laptop collection/02.png",
-        "quantity": 20,
+        "quantity": 100,
         "description": "The MacBook Pro 13-inch (M2) delivers powerful performance with the Apple M2 chip. It features a high-quality Retina display, improved battery life, and offers great performance for both work and entertainment.",
         "rating": 4.5,
         "is_bundle": false
@@ -27,7 +27,7 @@
         "price": 1999,
         "category":"Electronics",
         "image": "images/laptop collection/03.png",
-        "quantity": 15,
+        "quantity": 100,
         "description": "Powered by the Apple M2 Pro and M2 Max chips, the MacBook Pro 14-inch offers unparalleled performance for professional users. It has a stunning Liquid Retina XDR display, great battery life, and an array of ports, making it ideal for intensive creative work, coding, and more.",
         "rating": 4.8,
         "is_bundle": false
@@ -37,9 +37,8 @@
         "name": "Apple MacBook Pro 16-inch (2023)",
         "price": 2499,
         "category":"Electronics",
-  
         "image": "images/laptop collection/04.png",
-        "quantity": 5,
+        "quantity": 100,
         "description": "With the M2 Pro or M2 Max chip, the 16-inch MacBook Pro is designed for professionals needing top-tier performance. It features a massive 16.2-inch Retina display, incredible battery life, and powerful graphics, making it perfect for high-end creative tasks like video editing and 3D rendering.",
         "rating": 4.9,
         "is_bundle": false
@@ -51,7 +50,7 @@
         "price": 1299,
         "category":"Electronics",
         "image": "images/laptop collection/05.png",
-        "quantity": 30,
+        "quantity": 100,
         "description": "The 15-inch MacBook Air with the M2 chip is the perfect balance of power and portability. It features a larger, stunning Retina display with 500 nits of brightness, making it ideal for productivity and entertainment. The thin, lightweight design is available in four colors: Midnight, Starlight, Space Gray, and Silver. With long battery life and powerful performance, the MacBook Air 15-inch is perfect for daily tasks, creative projects, and light gaming.",
         "rating": 4.6,
         "is_bundle": false
@@ -62,7 +61,7 @@
         "price": 1099,
         "category":"Electronics",
         "image": "images/laptop collection/06.png",
-        "quantity": 25,
+        "quantity": 100,
         "description": "The Samsung Galaxy Book3 15-inch is an ultra-lightweight laptop with a 15.6-inch FHD display. It features the latest Intel Core processors and Intel Iris Xe graphics, making it an excellent option for students, professionals, and casual users. With long battery life, solid build quality, and quick charging, this laptop is designed for everyday computing and multitasking.",
         "rating": 4.3,
         "is_bundle": false
@@ -73,7 +72,7 @@
         "price": 1249,
         "category":"Electronics",
         "image": "images/laptop collection/07.png",
-        "quantity": 18,
+        "quantity": 100,
         "description": "The Galaxy Book2 Pro 360 offers a 13.3-inch AMOLED touchscreen display with excellent brightness and color accuracy. Powered by the Intel Core i5/i7 processors and Intel Iris Xe graphics, it's great for everyday tasks and light creative work. The 2-in-1 convertible design, ultra-thin body, and long battery life make it ideal for portability and productivity on the go.",
         "rating": 4.4,
         "is_bundle": false
@@ -84,7 +83,7 @@
         "price": 999,
         "category":"Electronics",
         "image": "images/laptop collection/08.png",
-        "quantity": 40,
+        "quantity": 100,
         "description": "The HP ENVY 13.3-inch laptop features a sleek design with an Intel Core i5 or i7 processor and Intel Iris Xe graphics. With a stunning FHD display and a solid battery life of up to 11 hours, it’s ideal for daily tasks, productivity, and light creative work. It also includes a fingerprint reader for added security.",
         "rating": 4.2,
         "is_bundle": false
@@ -95,7 +94,7 @@
         "price": 1499,
         "category":"Electronics",
         "image": "images/laptop collection/09.png",
-        "quantity": 22,
+        "quantity": 100,
         "description": "The HP Spectre x360 features a 14-inch OLED display with stunning color and clarity. Powered by the Intel Core i7 processor and Intel Iris Xe graphics, it’s designed for performance and portability. The 2-in-1 convertible design, ultra-slim chassis, and long battery life make it perfect for users who need both style and substance.",
         "rating": 4.7,
         "is_bundle": false
@@ -106,7 +105,7 @@
         "price": 1499,
         "category":"Electronics",
         "image": "images/laptop collection/10.png",
-        "quantity": 12,
+        "quantity": 100,
         "description": "The HP Omen 16 is built for gamers with its 16.1-inch FHD display, NVIDIA GeForce RTX 3060/3070 graphics, and Intel Core i7 processor. Designed for high performance, it features fast refresh rates and enhanced cooling systems for intense gaming sessions. The sleek, customizable design and solid battery life make it a top choice for gaming enthusiasts.",
         "rating": 4.6,
         "is_bundle": false
@@ -117,7 +116,7 @@
         "price": 1999,
         "category":"Electronics",
         "image": "images/laptop collection/11.png",
-        "quantity": 8,
+        "quantity": 100,
         "description": "The 14-inch MacBook Pro with the new M2 Pro chip offers exceptional performance for professional workflows. It features a stunning Liquid Retina XDR display, ideal for creatives and developers. With longer battery life and faster performance than ever before, it’s designed for heavy-duty tasks like video editing, software development, and more. Available in Space Gray and Silver, it also comes with three Thunderbolt 4 ports, an HDMI port, and an SDXC card slot.",
         "rating": 4.8,
         "is_bundle": false
@@ -128,7 +127,7 @@
         "price": 999,
         "category":"Electronics",
         "image": "images/laptop collection/12.png",
-        "quantity": 10,
+        "quantity": 100,
         "description": "The MacBook Air (M1) is powered by Apple's first custom silicon chip, delivering impressive performance and battery life. The 13.3-inch Retina display, combined with a thin, fanless design, makes this laptop an excellent choice for those who want a balance of portability and power.",
         "rating": 4.6,
         "is_bundle": false
@@ -139,7 +138,7 @@
       "price": 799,
       "category":"Electronics",
       "image": "images/mobile collection/01.png",
-      "quantity": 10,
+      "quantity": 100,
       "description": "The iPhone 15 delivers flagship features at an accessible price. Powered by the A16 Bionic chip, it offers smooth performance and efficiency. The 6.1-inch Super Retina XDR display ensures vivid colors and sharp details. With Dynamic Island and a new 48MP main camera, this iPhone is perfect for capturing your life in stunning clarity.",
       "rating": 4.5,
       "is_bundle": false
@@ -150,7 +149,7 @@
       "price": 1099,
       "category":"Electronics",
       "image": "images/mobile collection/03.png",
-      "quantity": 10,
+      "quantity": 100,
       "description": "Introducing the iPhone 15 Pro, a marvel of d all-new A17 Pro chip, it offers groundbreaking perfor.",
       "rating": 4.7,
       "is_bundle": false
@@ -161,7 +160,7 @@
       "price": 1199,
       "category":"Electronics",
       "image": "images/mobile collection/02.png",
-      "quantity": 10,
+      "quantity": 100,
       "description": "Experience the ultimate in smartphone technology with the iPhone 15 Pro Max. Featuring a stunning 6.7-inch Super Retina XDR display, the A17 Pro chip for lightning-fast performance, and an upgraded triple-camera system with 5x telephoto zoom. This device is built with aerospace-grade titanium for unparalleled durability and lightweight design.",
       "rating": 4.8,
       "is_bundle": false
@@ -172,7 +171,7 @@
       "price": 799,
       "category":"Electronics",
       "image": "images/mobile collection/04.png",
-      "quantity": 10,
+      "quantity": 100,
       "description": "The iPhone 14 Pro sets a new standard with its 48MP main camera, always-on 6.1-inch Super Retina XDR display, and Dynamic Island for smarter interactions. Powered by the A16 Bionic chip, it combines exceptional performance with advanced features like ProRAW and ProMotion for an immersive experience.",
       "rating": 4.6,
       "is_bundle": false
@@ -183,7 +182,7 @@
       "price": 280,
       "category":"Electronics",
       "image": "images/mobile collection/05.png",
-      "quantity": 10,
+      "quantity": 100,
       "description": "A mid-range phone offering excellent value: 6.67-inch AMOLED display with 120Hz refresh rate. MediaTek Dimensity 7200-Ultra processor for smooth performance. 200 MP primary camera and 16 MP selfie camera. 5100 mAh battery with 67W fast charging.",
       "rating": 4.4,
       "is_bundle": false
@@ -194,7 +193,7 @@
       "price": 350,
       "category":"Electronics",
       "image": "images/mobile collection/06.png",
-      "quantity": 10,
+      "quantity": 100,
       "description": "A high-performance smartphone for gamers and multitaskers: 6.67-inch AMOLED display with 120Hz refresh rate and Dolby Vision support. Snapdragon 7+ Gen 2 chipset for flagship-level performance. 64 MP primary camera with OIS and 5000 mAh battery. 67W fast charging and LiquidCool Technology 2.0.",
       "rating": 4.5,
       "is_bundle": false
@@ -205,7 +204,7 @@
       "price": 500,
       "category":"Electronics",
       "image": "images/mobile collection/07.png",
-      "quantity": 10,
+      "quantity": 100,
       "description": "A premium device for photography enthusiasts: 6.67-inch CrystalRes AMOLED display. MediaTek Dimensity 8100-Ultra processor. 108 MP main camera with 8K video recording. 5000 mAh battery with 120W HyperCharge (100% in 19 minutes).",
       "rating": 4.6,
       "is_bundle": false
@@ -216,7 +215,7 @@
       "price": 1099,
       "category":"Electronics",
       "image": "images/mobile collection/08.png",
-      "quantity": 10,
+      "quantity": 100,
       "description": "A flagship smartphone with cutting-edge features: 6.73-inch AMOLED display with 120Hz refresh rate. Powered by Snapdragon 8 Gen 2 chipset. 50 MP triple-camera system co-engineered with Leica for professional photography. 4820 mAh battery with 120W fast charging.",
       "rating": 4.7,
       "is_bundle": false
@@ -227,7 +226,7 @@
       "price": 499,
       "category":"Electronics",
       "image": "images/mobile collection/09.png",
-      "quantity": 10,
+      "quantity": 100,
       "description": "A top-tier A-series phone with flagship-like features: 6.7-inch Super AMOLED+ display with 120Hz refresh rate. Snapdragon 778G chipset for smooth performance. 108 MP quad-camera setup for high-resolution photography. 5000 mAh battery with 25W fast charging. Sleek design and water resistance (IP67).",
       "rating": 4.5,
       "is_bundle": false
@@ -238,7 +237,7 @@
       "price": 449,
       "category":"Electronics",
       "image": "images/mobile collection/10.png",
-      "quantity": 10,
+      "quantity": 100,
       "description": "A mid-range powerhouse with modern features: 6.4-inch Super AMOLED display with 120Hz refresh rate. Exynos 1380 processor for efficient multitasking. 50 MP primary camera with OIS for clear photos and videos. 5000 mAh battery with 25W fast charging. Premium glass back design for durability.",
       "rating": 4.4,
       "is_bundle": false
@@ -249,7 +248,7 @@
       "price": 299,
       "category":"Electronics",
       "image": "images/mobile collection/11.png",
-      "quantity": 10,
+      "quantity": 100,
       "description": "An affordable option with balanced performance: 6.6-inch Super AMOLED display with 120Hz refresh rate. MediaTek Dimensity 1080 chipset for reliable performance. 48 MP main camera with OIS for detailed photography. 5000 mAh battery with 25W fast charging. Water resistance (IP67) and sleek polycarbonate design.",
       "rating": 4.3,
       "is_bundle": false
@@ -260,7 +259,7 @@
       "price": 199,
       "category":"Electronics",
       "image": "images/mobile collection/12.png",
-      "quantity": 10,
+      "quantity": 100,
       "description": "A budget-friendly 5G smartphone for everyday use: 6.6-inch PLS LCD display with 90Hz refresh rate. Powered by Exynos 1330 or MediaTek Dimensity 700 chipset. 50 MP primary camera for decent photo quality. 5000 mAh battery with 15W charging. Minimalistic design with a focus on durability.",
       "rating": 4.2,
       "is_bundle": false
@@ -271,7 +270,7 @@
       "price": 350,
       "category":"Electronics",
       "image": "images/tablet collection/s9.webp",
-      "quantity": 10,
+      "quantity": 100,
       "description": "A flagship tablet with a compact size for versatile use: 11-inch Dynamic AMOLED 2X display with 120Hz refresh rate. Powered by Snapdragon 8 Gen 2 chipset. 13 MP rear camera and 12 MP front camera. S Pen included for creativity and note-taking. 8400 mAh battery with 45W fast charging.",
       "rating": 4.5,
       "is_bundle": false
@@ -282,7 +281,7 @@
       "price": 540,
       "category":"Electronics",
       "image": "images/tablet collection/s9+.webp",
-      "quantity": 8,
+      "quantity": 100,
       "description": "A premium tablet perfect for entertainment and multitasking: 12.4-inch Dynamic AMOLED 2X display with HDR10+ and 120Hz refresh rate. Snapdragon 8 Gen 2 chipset for powerful multitasking. Dual rear cameras (13 MP + 8 MP) and a 12 MP front camera. S Pen included for precise input. 10090 mAh battery with 45W fast charging.",
       "rating": 4.7,
       "is_bundle": false
@@ -293,7 +292,7 @@
       "price": 690,
       "category":"Electronics",
       "image": "images/tablet collection/s9+u.webp",
-      "quantity": 5,
+      "quantity": 100,
       "description": "A high-end tablet designed for professionals and creatives: 14.6-inch Dynamic AMOLED 2X display with 120Hz refresh rate. Powered by Snapdragon 8 Gen 2 chipset for ultra-fast performance. Dual-camera setup (13 MP + 8 MP) and 12 MP dual front cameras. S Pen included for productivity and creativity. 11200 mAh battery with 45W fast charging.",
       "rating": 4.8,
       "is_bundle": false
@@ -304,7 +303,7 @@
       "price": 750,
       "category":"Electronics",
       "image": "images/tablet collection/s10u.jpg",
-      "quantity": 3,
+      "quantity": 100,
       "description": "A rugged tablet built for outdoor and industrial use: 10.1-inch TFT display with Corning Gorilla Glass 5. Powered by Snapdragon 778G chipset for reliable performance. 13 MP rear camera and 8 MP front camera. Military-grade durability (MIL-STD-810H) with water and dust resistance (IP68). S Pen included, designed for tough environments.",
       "rating": 4.9,
       "is_bundle": false
@@ -315,7 +314,7 @@
       "price": 640,
       "category":"Electronics",
       "image": "images/tablet collection/s10+.webp",
-      "quantity": 7,
+      "quantity": 100,
       "description": "An affordable tablet for casual use and learning: 10.5-inch TFT display with 1920 x 1200 resolution. Unisoc T618 processor for smooth daily performance. 8 MP rear camera and 5 MP front camera. 7040 mAh battery with 15W fast charging. Slim design and Dolby Atmos support for immersive audio.",
       "rating": 4.2,
       "is_bundle": false
@@ -326,7 +325,7 @@
       "price": 400,
       "category":"Electronics",
       "image": "images/tablet collection/s8u.webp",
-      "quantity": 6,
+      "quantity": 100,
       "description": "A flagship tablet designed for power users and professionals: 14.6-inch Super AMOLED display with a 120Hz refresh rate, offering vibrant colors and smooth visuals. Powered by the Snapdragon 8 Gen 1 chipset, ensuring seamless multitasking and gaming. Dual 13 MP + 6 MP rear cameras and dual 12 MP front cameras for high-quality photography and video calls. 11200 mAh battery with 45W fast charging for extended use and quick recharge. Slim, lightweight design with premium materials for a modern and durable finish. Included S Pen with ultra-low latency for precise writing, drawing, and productivity tasks.",
       "rating": 4.6,
       "is_bundle": false
@@ -337,7 +336,7 @@
       "price": 1000,
       "category":"Electronics",
       "image": "images/tablet collection/ipadm2.webp",
-      "quantity": 4,
+      "quantity": 100,
       "description": "A premium tablet powered by the M2 chip, featuring a Liquid Retina XDR display, Apple Pencil hover functionality, and Magic Keyboard support. Perfect for professionals and creatives.",
       "rating": 4.9,
       "is_bundle": false
@@ -348,7 +347,7 @@
       "price": 799,
       "category":"Electronics",
       "image": "images/tablet collection/ipad11.jpeg",
-      "quantity": 6,
+      "quantity": 100,
       "description": "The 11-inch iPad Pro offers exceptional performance with the M2 chip, ProMotion technology, and ultra-wide cameras. Compact yet powerful for productivity and entertainment.",
       "rating": 4.7,
       "is_bundle": false
@@ -359,7 +358,7 @@
       "price": 1000,
       "category":"Electronics",
       "image": "images/tablet collection/ipad5.jpeg",
-      "quantity": 5,
+      "quantity": 100,
       "description": "A powerful tablet featuring a 10.9-inch Liquid Retina display, M1 chip, and support for Apple Pencil and Magic Keyboard. Ideal for both students and professionals.",
       "rating": 4.4,
       "is_bundle": false
@@ -370,7 +369,7 @@
     "price": 140,
     "category":"Audio",
     "image": "images/Speakers/image(1).jpg",
-    "quantity": 10,
+    "quantity": 100,
     "description": "Brand: JBL, Speaker Maximum Output Power: 40 Watts, Frequency Response: 110 Hz, Connectivity Technology: wireless, Audio Output Mode: Stereo",
     "rating": 4.5,
     "is_bundle": false
@@ -381,7 +380,7 @@
     "price": 45,
     "category":"Audio",
     "image": "images/Speakers/image(2).jpg",
-    "quantity": 10,
+    "quantity": 100,
     "description": "Brand: JBL, Speaker Maximum Output Power: 5 Watts, Connectivity Technology: Bluetooth, Audio Output Mode: Stereo, Mounting Type: Clip On, Freestanding, Plug Mount",
     "rating": 4.3,
     "is_bundle": false
@@ -392,7 +391,7 @@
     "price": 35,
     "category":"Audio",
     "image": "images/Speakers/image(3).jpg",
-    "quantity": 10,
+    "quantity": 100,
     "description": "Brand: JBL, Connectivity Technology: Bluetooth, Audio Output Mode: Stereo, Mounting Type: Freestanding, Material: Plastic or Polymer",
     "rating": 4.4,
     "is_bundle": false
@@ -403,7 +402,7 @@
     "price": 280,
     "category":"Audio",
     "image": "images/Speakers/image(4).jpg",
-    "quantity": 10,
+    "quantity": 100,
     "description": "Brand: JBL, Speaker Maximum Output Power: 160 Watts, Frequency Response: 40 Hz, Connectivity Technology: Bluetooth, Auxiliary, USB, Dual Guitar/Mic inputs, Audio Output Mode: Stereo",
     "rating": 4.8,
     "is_bundle": false
@@ -414,7 +413,7 @@
     "price": 38,
     "category":"Audio",
     "image": "images/Speakers/image(5).jpg",
-    "quantity": 10,
+    "quantity": 100,
     "description": "Brand: Sony, Speaker Maximum Output Power: 5 Watts, Frequency Response: 2.4 GHz, Connectivity Technology: Bluetooth, Audio Output Mode: Stereo",
     "rating": 4.2,
     "is_bundle": false
@@ -425,7 +424,7 @@
     "price": 40,
     "category":"Audio",
     "image": "images/Speakers/6.webp",
-    "quantity": 10,
+    "quantity": 100,
     "description": "Brand: NOTABRICK, Speaker Maximum Output Power: 15 Watts, Connectivity Technology: Bluetooth, Audio Output Mode: Surround, Mounting Type: Tabletop Mount",
     "rating": 4.1,
     "is_bundle": false
@@ -436,7 +435,7 @@
     "price": 89.99,
     "category":"Audio",
     "image": "images/headphone collection/01.png",
-    "quantity": 10,
+    "quantity": 100,
     "description": "Premium headphones with active noise cancellation.",
     "rating": 4.5,
     "is_bundle": false
@@ -447,7 +446,7 @@
     "price": 25,
     "category":"Audio",
     "image": "images/headphone collection/02.png",
-    "quantity": 15,
+    "quantity": 100,
     "description": "Premium headphones with active noise cancellation.",
     "rating": 4.0,
     "is_bundle": false
@@ -458,7 +457,7 @@
     "price": 25,
     "category":"Audio",
     "image": "images/headphone collection/03.png",
-    "quantity": 12,
+    "quantity": 100,
     "description": "Premium headphones with active noise cancellation.",
     "rating": 4.2,
     "is_bundle": false
@@ -469,7 +468,7 @@
     "price": 25,
     "category":"Audio",
     "image": "images/headphone collection/04.png",
-    "quantity": 8,
+    "quantity": 100,
     "description": "Stylish headphones with great sound quality.",
     "rating": 4.3,
     "is_bundle": false
@@ -480,7 +479,7 @@
     "price": 25,
     "category":"Audio",
     "image": "images/headphone collection/05.png",
-    "quantity": 20,
+    "quantity": 100,
     "description": "Premium headphones with active noise cancellation.",
     "rating": 4.6,
     "is_bundle": false
@@ -491,7 +490,7 @@
     "price": 25,
     "category":"Audio",
     "image": "images/headphone collection/06.png",
-    "quantity": 9,
+    "quantity": 100,
     "description": "Premium headphones with active noise cancellation.",
     "rating": 4.4,
     "is_bundle": false
@@ -502,7 +501,7 @@
     "price": 25,
     "category":"Audio",
     "image": "images/headphone collection/07.png",
-    "quantity": 10,
+    "quantity": 100,
     "description": "Premium headphones with active noise cancellation.",
     "rating": 4.1,
     "is_bundle": false
@@ -513,7 +512,7 @@
     "price": 25,
     "category":"Audio",
     "image": "images/headphone collection/08.png",
-    "quantity": 13,
+    "quantity": 100,
     "description": "Premium headphones with active noise cancellation.",
     "rating": 4.0,
     "is_bundle": false
@@ -524,7 +523,7 @@
     "price": 25,
     "category":"Audio",
     "image": "images/headphone collection/09.png",
-    "quantity": 7,
+    "quantity": 100,
     "description": "Premium headphones with active noise cancellation.",
     "rating": 4.3,
     "is_bundle": false
@@ -535,7 +534,7 @@
     "price": 25,
     "category":"Audio",
     "image": "images/headphone collection/10.png",
-    "quantity": 11,
+    "quantity": 100,
     "description": "Premium headphones with active noise cancellation.",
     "rating": 4.4,
     "is_bundle": false
@@ -546,7 +545,7 @@
     "price": 25,
     "category":"Audio",
     "image": "images/headphone collection/11.png",
-    "quantity": 14,
+    "quantity": 100,
     "description": "Premium headphones with active noise cancellation.",
     "rating": 4.5,
     "is_bundle": false
@@ -557,7 +556,7 @@
     "price": 25,
     "category":"Audio",
     "image": "images/headphone collection/12.png",
-    "quantity": 9,
+    "quantity": 100,
     "description": "Premium headphones with active noise cancellation.",
     "rating": 4.3,
     "is_bundle": false
@@ -568,7 +567,7 @@
     "price": 49.95,
     "category":"Audio",
     "image": "Images/earphones/1.jpg",
-    "quantity": 10,
+    "quantity": 100,
     "description": "Brand: JBL, Color: Black, Ear Placement: In Ear, Form Factor: In Ear, Impedance: 32 Ohm",
     "rating": 4.0,
     "is_bundle": false
@@ -579,7 +578,7 @@
     "price": 79.95,
     "category":"Audio",
     "image": "Images/earphones/2.webp",
-    "quantity": 10,
+    "quantity": 100,
     "description": "Dust and Water Proof (IP68) True Wireless Active Earbuds, Pure Bass Sound, Up to 50 Total Hours of Playback with Speed Charge, Ambient Aware & Talk Thru (Black)",
     "rating": 4.5,
     "is_bundle": false
@@ -590,7 +589,7 @@
     "price": 29,
     "category":"Audio",
     "image": "Images/earphones/3.jpg",
-    "quantity": 10,
+    "quantity": 100,
     "description": "Premium headphones with active noise cancellation.",
     "rating": 4.2,
     "is_bundle": false
@@ -601,7 +600,7 @@
     "price": 48,
     "category":"Audio",
     "image": "Images/earphones/4.jpg",
-    "quantity": 10,
+    "quantity": 100,
     "description": "Truly Wireless in-Ear Bluetooth Earbud Headphones with up to 22-Hour Battery, Multipoint-Connection, Mic and IPX4 Water Resistance, White- New",
     "rating": 4.4,
     "is_bundle": false
@@ -612,7 +611,7 @@
     "price": 20.80,
     "category":"Audio",
     "image": "Images/earphones/5.jpg",
-    "quantity": 10,
+    "quantity": 100,
     "description": "Headset with mic for Phone Call, Black (MDR-EX155AP/B)",
     "rating": 4.3,
     "is_bundle": false
@@ -623,7 +622,7 @@
     "price": 98.11,
     "category":"Audio",
     "image": "Images/earphones/6.jpg",
-    "quantity": 10,
+    "quantity": 100,
     "description": "True Wireless Noise Cancelling Earbuds - Compatible with Apple & Android, Built-in Microphone, IPX4 Rating, Sweat Resistant Earphones, Class 1 Bluetooth Headphones - Black",
     "rating": 4.6,
     "is_bundle": false
@@ -634,7 +633,7 @@
     "price": 160,
     "category":"Audio",
     "image": "Images/earphones/7.jpg",
-    "quantity": 10,
+    "quantity": 100,
     "description": "Wireless Ear Buds + Lightning Charging Case + Lightning to USB Cable + 1 Year Limited Warranty",
     "rating": 4.8,
     "is_bundle": false
@@ -645,7 +644,7 @@
     "price": 10, 
     "category":"Audio",
     "image": "Images/earphones/8.jpg",
-    "quantity": 10,
+    "quantity": 100,
     "description": "Lightning Connector Wired Earphones (Built-in Microphone & Volume Control) Noise Canceling Isolating Headphones for iPhone 14/13/12/11/SE/X/XR/XS/8/7-1Pack",
     "rating": 4.0,
     "is_bundle": false
@@ -656,7 +655,7 @@
     "price": 250,
     "category":"Audio",
     "image": "Images/earphones/9.webp",
-    "quantity": 10,
+    "quantity": 100,
     "description": "AI True Wireless Bluetooth Earbuds, Noise Cancelling, Sound Optimization, Real-Time Interpreter, Redesigned Comfort Fit, Silver",
     "rating": 4.7,
     "is_bundle": false
@@ -667,9 +666,9 @@
     "price": 479,
     "category": "Wearable",
     "image": "images/smartwatch collection/01.png",
-    "quantity": 10,
+    "quantity": 100,
     "description": "Apple Watch Series9 MR9G3 GPS 45mm Pink Case with Pink Sport Band",
-    "rating": null,
+    "rating": 4.5,
     "is_bundle": false
   },
   {
@@ -678,9 +677,9 @@
     "price": 330,
     "category": "Wearable",
     "image": "images/smartwatch collection/02.png",
-    "quantity": 10,
+    "quantity": 100,
     "description": "Apple Watch Series 9 Gps With Sport Loop",
-    "rating": null,
+    "rating": 4.8,
     "is_bundle": false
   },
   {
@@ -689,9 +688,9 @@
     "price": 300,
     "category": "Wearable",
     "image": "images/smartwatch collection/03.png",
-    "quantity": 10,
+    "quantity": 100,
     "description": "Apple Watch Series 6 (GPS, 44mm) Space Grey Aluminium Case with Black Sport Band",
-    "rating": null,
+    "rating": 4.8,
     "is_bundle": false
   },
   {
@@ -700,9 +699,9 @@
     "price": 850,
     "category": "Wearable",
     "image": "images/smartwatch collection/04.png",
-    "quantity": 10,
+    "quantity": 100,
     "description": "The rugged 49mm aerospace-grade titanium case comes with built-in GPS + Cellular connectivity.",
-    "rating": null,
+    "rating": 4.8,
     "is_bundle": false
   },
   {
@@ -711,9 +710,9 @@
     "price": 950,
     "category": "Wearable",
     "image": "images/smartwatch collection/05.png",
-    "quantity": 10,
+    "quantity": 100,
     "description": "Smartwatch with Rugged Titanium Case & Olive Alpine Loop Large. Fitness Tracker, Precision GPS, Action Button, Extra-Long Battery Life",
-    "rating": null,
+    "rating": 4.3,
     "is_bundle": false
   },
   {
@@ -722,9 +721,9 @@
     "price": 550,
     "category": "Wearable",
     "image": "images/smartwatch collection/06.png",
-    "quantity": 10,
+    "quantity": 100,
     "description": "Apple Watch SE 44mm Starlight Aluminium Case GPS + Cellular Sport Band (M/L). MXGU3ZP/A",
-    "rating": null,
+    "rating": 4.3,
     "is_bundle": false
   },
   {
@@ -733,9 +732,9 @@
     "price": 600,
     "category": "Wearable",
     "image": "images/smartwatch collection/07.png",
-    "quantity": 10,
+    "quantity": 100,
     "description": "Apple Watch SE 2nd Generation (GPS) 44mm Midnight Aluminum Case with Midnight Sport Band - S/M, Midnight | MRE73LL/A",
-    "rating": null,
+    "rating": 4.3,
     "is_bundle": false
   },
   {
@@ -744,9 +743,9 @@
     "price": 600,
     "category": "Wearable",
     "image": "images/smartwatch collection/08.png",
-    "quantity": 10,
+    "quantity": 100,
     "description": "Apple Watch SE 2nd Generation (GPS) 44mm Midnight Midnight Sport Band, Midnight | MRE73LL/A",
-    "rating": null,
+    "rating": 4.6,
     "is_bundle": false
   },
   {
@@ -755,9 +754,9 @@
     "price": 70,
     "category": "Wearable",
     "image": "images/smartwatch collection/09.png",
-    "quantity": 10,
-    "description": "Samsung Galaxy Fit3 Smart Watch with 4 cm Curved AMOLED Display, Up to 13-day Battery Backup, IP68 Rating, Bluetooth v5.3 (Silver)",
-    "rating": null,
+    "quantity": 100,
+    "description": "Samsung Galaxy Fit3 Smart Watch with 4 cm Curved AMOLED Display, Up to 13-day Battery Backup, IP68 Rating, B4.6ooth v5.3 (Silver)",
+    "rating": 4.6,
     "is_bundle": false
   },
   {
@@ -766,9 +765,9 @@
     "price": 75,
     "category": "Wearable",
     "image": "images/smartwatch collection/10.png",
-    "quantity": 10,
+    "quantity": 100,
     "description": "SAMSUNG Galaxy FIT 3 [2024] 1.6\u2033 AMOLED Display | 14 Days Battery Life | 100+ Watchfaces | 100+ Exercise Modes | International Model",
-    "rating": null,
+    "rating": 4.5,
     "is_bundle": false
   },
   {
@@ -777,9 +776,9 @@
     "price": 85,
     "category": "Wearable",
     "image": "images/smartwatch collection/11.png",
-    "quantity": 10,
-    "description": "It has a large vivid 1.1-inch AMOLED touch display with Always-on-display ensuring you can view your stats, track your Fit 3ness and health, and stay updated colorfully",
-    "rating": null,
+    "quantity": 100,
+    "description": "It has a large vivid 1.1-inch AMOLED touch display with Always-on-display ensuring you can view your stats, 4.5k your Fit 3ness and health, and stay updated colorfully",
+    "rating": 4.5,
     "is_bundle": false
   },
   {
@@ -788,9 +787,9 @@
     "price": 90,
     "category": "Wearable",
     "image": "images/smartwatch collection/12.png",
-    "quantity": 10,
+    "quantity": 100,
     "description": "Rectangular Silicone Noise Color Fit Pulse Spo2 Smart Watch, For Daily",
-    "rating": null,
+    "rating": 4.2,
     "is_bundle": false
   },
   {
@@ -799,9 +798,9 @@
     "price": 30,
     "category": "accessories",
     "image": "images/Chargers/OIP (2).jpeg",
-    "quantity": 10,
+    "quantity": 100,
     "description": "Samsung Official 45W USB-C Super Fast Charging Wall Charger (Black)",
-    "rating": null,
+    "rating": 4.2,
     "is_bundle": false
   },
   {
@@ -810,9 +809,9 @@
     "price": 60,
     "category": "accessories",
     "image": "images/Chargers/OIP.jpeg",
-    "quantity": 10,
+    "quantity": 100,
     "description": "Samsung 15W Fast Charge 2.0 Wireless Charger Stand - Black (US Version with Warranty)",
-    "rating": null,
+    "rating": 4.2,
     "is_bundle": false
   },
   {
@@ -821,9 +820,9 @@
     "price": 100,
     "category": "accessories",
     "image": "images/Chargers/OIP (1).jpeg",
-    "quantity": 10,
+    "quantity": 100,
     "description": "Samsung Qi Certified Fast Charger & Wireless Charging Stand",
-    "rating": null,
+    "rating": 4.4,
     "is_bundle": false
   },
   {
@@ -832,9 +831,9 @@
     "price": 49,
     "category": "accessories",
     "image": "images/Chargers/OIP (3).jpeg",
-    "quantity": 10,
+    "quantity": 100,
     "description": "The perfectly aligned magnets attach to your iPhone 12 or later. The MagSafe Charger provides faster wireless charging up to 25W when paired with a 30W power adapter",
-    "rating": null,
+    "rating": 4.4,
     "is_bundle": false
   },
   {
@@ -843,9 +842,9 @@
     "price": 20,
     "category": "accessories",
     "image": "images/Chargers/MU7T2_GEO_US.jpeg",
-    "quantity": 10,
+    "quantity": 100,
     "description": "The Apple 20W USB‑C Power Adapter offers fast, efficient charging at home, in the office, or on the go",
-    "rating": null,
+    "rating": 4.4,
     "is_bundle": false
   },
   {
@@ -854,9 +853,9 @@
     "price": 30,
     "category": "accessories",
     "image": "images/Chargers/IMAGE(2).jpg",
-    "quantity": 10,
+    "quantity": 100,
     "description": "High-Speed Charging: The 20W USB-C charging gives you the power to charge up your iPhone 15 from 0 to 50% in just 27 minutes—that's up to 3 times faster than your old 5W charger",
-    "rating": null,
+    "rating": 4.1,
     "is_bundle": false
   },
   {
@@ -865,9 +864,9 @@
     "price": 10,
     "category": "accessories",
     "image": "Images/Chargers/c2.jpeg",
-    "quantity": 10,
+    "quantity": 100,
     "description": "2 meters",
-    "rating": null,
+    "rating": 4.1,
     "is_bundle": false
   },
   {
@@ -876,9 +875,9 @@
     "price": 10,
     "category": "accessories",
     "image": "Images/Chargers/c1.jpeg",
-    "quantity": 10,
+    "quantity": 100,
     "description": "2meter",
-    "rating": null,
+    "rating": 4.1,
     "is_bundle": false
   },
   {
@@ -887,9 +886,9 @@
     "price": 15,
     "category": "accessories",
     "image": "images/PowerBanks/image(1).jpg",
-    "quantity": 10,
+    "quantity": 100,
     "description": "USB-C*1+USB-A*2, INIU, 10000 Milliamp Hours, Black, Travel, Pocket-size, Lightweight, Paw print, Indicator Lights, Two USB ports, Slim, Flashlight, Compact.",
-    "rating": null,
+    "rating": 4.6,
     "is_bundle": false
   },
   {
@@ -898,9 +897,9 @@
     "price": 25,
     "category": "accessories",
     "image": "images/PowerBanks/image(2).jpg",
-    "quantity": 10,
+    "quantity": 100,
     "description": "USB Type C, USB Type A, INIU, 20000 Milliamp Hours, Black, LED Indicator Lights, Lightweight, Flashlight, Fast Charging.",
-    "rating": null,
+    "rating": 4.6,
     "is_bundle": false
   },
   {
@@ -909,9 +908,9 @@
     "price": 25,
     "category": "accessories",
     "image": "images/PowerBanks/image(3).webp",
-    "quantity": 10,
+    "quantity": 100,
     "description": "USB-A*1 + USB-C*1, Brand Anker, Battery Capacity 10000, Color Black, Special Feature Slim.",
-    "rating": null,
+    "rating": 4.6,
     "is_bundle": false
   },
   {
@@ -920,9 +919,9 @@
     "price": 28,
     "category": "accessories",
     "image": "images/sd/image(1).webp",
-    "quantity": 10,
+    "quantity": 100,
     "description": "Brand SAMSUNG, Memory Storage Capacity 256 GB, Hardware Interface USB 3.2 Gen 1, Special Feature compact, Write Speed 300 Megabytes Per Second",
-    "rating": null,
+    "rating": 4.8,
     "is_bundle": false
   },
   {
@@ -931,9 +930,9 @@
     "price": 9,
     "category": "accessories",
     "image": "images/sd/image(2).webp",
-    "quantity": 10,
+    "quantity": 100,
     "description": "Brand DataOcean, Memory Storage Capacity 64 GB, Hardware Interface USB 2.0, Special Feature \u9632\u6454, Read Speed 18 Megabytes Per Second",
-    "rating": null,
+    "rating": 4.8,
     "is_bundle": false
   },
   {
@@ -942,9 +941,9 @@
     "price": 25,
     "category": "accessories",
     "image": "images/sd/image(3).webp",
-    "quantity": 10,
+    "quantity": 100,
     "description": "Brand fanxiang, Memory Storage Capacity 256 GB, Hardware Interface USB Type C, USB 3.2 Gen 2, Special Feature Dual USB Connector, Write Speed 490 Megabytes Per Second",
-    "rating": null,
+    "rating": 4.8,
     "is_bundle": false
   },
   {
@@ -953,7 +952,7 @@
     "price": 25,
     "category": "accessories",
     "image": "images/sd/image(4).webp",
-    "quantity": 10,
+    "quantity": 100,
     "description": "Digital Storage Capacity 512 GB, Hard Disk Interface Solid State, Connectivity Technology SATA, Brand Patriot Memory, Special Feature Backward Compatible, Hard Disk Form Factor 2.5 Inches, Hard Disk Description Solid State Hard Drive, Compatible Devices Desktop, Installation Type Internal Hard Drive, Color Black",
     "rating": null,
     "is_bundle": false
@@ -964,9 +963,9 @@
     "price": 53,
     "category": "accessories",
     "image": "images/sd/image(9).webp",
-    "quantity": 10,
+    "quantity": 100,
     "description": "Digital Storage Capacity 960 GB, Hard Disk Interface Solid State, Connectivity Technology SATA, Brand Kingston, Special Feature Backward Compatible, Hard Disk Form Factor 2.5 Inches, Hard Disk Description Solid State Drive, Compatible Devices Desktop, Notebook Computer, Installation Type Internal Hard Drive, Color Black",
-    "rating": null,
+    "rating": 4.3,
     "is_bundle": false
   },
   {
@@ -975,9 +974,9 @@
     "price": 65,
     "category": "accessories",
     "image": "images/sd/image(5).webp",
-    "quantity": 10,
+    "quantity": 100,
     "description": "Digital Storage Capacity 1000 GB, Hard Disk Interface eSATA, Connectivity Technology SATA, Brand Western Digital, Special Feature Dropbox Offer, Hard Disk Form Factor 3.5 Inches, Hard Disk Description Solid State Drive, Compatible Devices Laptop, Desktop, PC, Installation Type Internal Hard Drive, Color Blue",
-    "rating": null,
+    "rating": 4.3,
     "is_bundle": false
   },
   {
@@ -986,9 +985,9 @@
     "price": 19,
     "category": "accessories",
     "image": "images/sd/image(6).webp",
-    "quantity": 10,
+    "quantity": 100,
     "description": "Brand SanDisk, Model Name SanDisk Extreme PRO SD UHS-I Card, Flash Memory Type SDXC, Memory Storage Capacity 128 GB, Compatible Devices Computers, Digital Cameras, Home Theatre Devices, Car Navigation Systems",
-    "rating": null,
+    "rating": 4.3,
     "is_bundle": false
   },
   {
@@ -997,9 +996,9 @@
     "price": 30,
     "category": "accessories",
     "image": "images/sd/image(7).webp",
-    "quantity": 10,
+    "quantity": 100,
     "description": "Operating System Windows, Linux, Mac, Special Feature Backward Compatible, Slim & Portable, Plug & Play, Support Reading & Burning & Ripping, Two types of connectors, Hardware Interface USB 3.0 Type A, USB 3.0 Type C, Brand ROOFULL, Optical Storage Write Speed Max 24xCD / 8xDVD",
-    "rating": null,
+    "rating": 4.7,
     "is_bundle": false
   },
   {
@@ -1008,9 +1007,9 @@
     "price": 2,
     "category": "accessories",
     "image": "images/sd/image(8).webp",
-    "quantity": 10,
+    "quantity": 100,
     "description": "Brand Verbatim, Color Blue, Item Weight 3.65 Pounds, Memory Storage Capacity 700 MB, Format CD",
-    "rating": null,
+    "rating": 4.7,
     "is_bundle": false
   },
   {
@@ -1019,9 +1018,9 @@
     "price": 11.99,
     "category": "accessories",
     "image": "Images/PhoneCases/1.webp",
-    "quantity": 10,
+    "quantity": 100,
     "description": "Compatible with MagSafe, Military-Grade Protection, Yellowing Resistant, Scratch-Resistant Back, Magnetic Phone Case for iPhone 15, Classic Series, Clear",
-    "rating": null,
+    "rating": 4.7,
     "is_bundle": false
   },
   {
@@ -1030,9 +1029,9 @@
     "price": 25,
     "category": "accessories",
     "image": "Images/PhoneCases/2.webp",
-    "quantity": 10,
+    "quantity": 100,
     "description": "Case Military Grade Shockproof Protection Hard Phonecase - Dual Layer Matte Textured Drop Proof Rugged Protective Cover - 6.1 Inch Black",
-    "rating": null,
+    "rating": 4.5,
     "is_bundle": false
   },
   {
@@ -1041,9 +1040,9 @@
     "price": 10,
     "category": "accessories",
     "image": "Images/PhoneCases/3.jpg",
-    "quantity": 10,
+    "quantity": 100,
     "description": "Drop Tested Military Grade Cover with Magnetic Ring Kickstand,Protective Phone Case for Samsung Galaxy A73 Pine Green",
-    "rating": null,
+    "rating": 4.5,
     "is_bundle": false
   },
   {
@@ -1052,9 +1051,9 @@
     "price": 25,
     "category": "accessories",
     "image": "Images/PhoneCases/4.jpg",
-    "quantity": 10,
+    "quantity": 100,
     "description": "Shockproof Case for Samsung Galaxy A73 5G, with 360\u00b0 Rotatable Ring Holder Magnetic Kickstand, Plating Rose Gold Edge Slim Soft Protective Cover, Green",
-    "rating": null,
+    "rating": 4.5,
     "is_bundle": false
   },
   {
@@ -1063,9 +1062,9 @@
     "price": 8,
     "category": "accessories",
     "image": "Images/PhoneCases/5.jpg",
-    "quantity": 10,
+    "quantity": 100,
     "description": "JETech Case for Samsung Galaxy A54 5G 6.4-Inch, Non-Yellowing Shockproof Bumper Protective Phone Cover, Anti-Scratch Hard PC Back (Clear)",
-    "rating": null,
+    "rating": 4.2,
     "is_bundle": false
   },
   {
@@ -1074,9 +1073,9 @@
     "price": 6,
     "category": "accessories",
     "image": "Images/PhoneCases/6.jpg",
-    "quantity": 10,
+    "quantity": 100,
     "description": "AK for Samsung Galaxy A34 5G Case, Stylish Slim Liquid Silicone Full-Body Protective Cover for Samsung Galaxy A34 5G Phone Case (Light Cyan)",
-    "rating": null,
+    "rating": 4.2,
     "is_bundle": false
   },
   {
@@ -1085,9 +1084,9 @@
     "price": 19,
     "category": "accessories",
     "image": "Images/PhoneCases/7.jpg",
-    "quantity": 10,
+    "quantity": 100,
     "description": "Waterproof Case with Built-in Screen Protector, Full Body Dustproof Shockproof Rugged Heavy Duty Protection Case with Cell Phone Ring Holder for Samsung A34 5G",
-    "rating": null,
+    "rating": 4.2,
     "is_bundle": false
   },
   {
@@ -1096,9 +1095,9 @@
     "price": 15,
     "category": "accessories",
     "image": "Images/PhoneCases/8.webp",
-    "quantity": 10,
+    "quantity": 100,
     "description": "Xiaomi mi 13 Pro Phone Case with Slide Camera Protector Cover Hard PC TPU Slim Rugged Shockproof Protective Phone Case for Xiaomi mi 13 Pro (Blue)",
-    "rating": null,
+    "rating": 4.4,
     "is_bundle": false
   },
   {
@@ -1107,9 +1106,9 @@
     "price": 12,
     "category": "accessories",
     "image": "Images/PhoneCases/9.jpg",
-    "quantity": 10,
+    "quantity": 100,
     "description": "Case Compatible with Xiao Mi Poco F5 PRO 5G, [Droproof] [Sweat-Proof] [Fingerprint-Proof] Shockproof Protective Phone Case Fits Xiao Mi Poco F5 PRO. Clear Black",
-    "rating": null,
+    "rating": 4.4,
     "is_bundle": false
   },
   {
@@ -1118,9 +1117,9 @@
     "price": 10,
     "category": "accessories",
     "image": "Images/PhoneCases/10.webp",
-    "quantity": 10,
+    "quantity": 100,
     "description": "ESR for iPhone 14 Pro Case, Compatible with MagSafe, Shockproof Military-Grade Protection, Yellowing Resistant, Magnetic Phone Case for iPhone 14 Pro, Classic Hybrid Case (HaloLock), Clear",
-    "rating": null,
+    "rating": 4.4,
     "is_bundle": false
   },
   {
@@ -1129,9 +1128,9 @@
     "price": 18,
     "category": "accessories",
     "image": "Images/PhoneCases/11.jpg",
-    "quantity": 10,
+    "quantity": 100,
     "description": "Xiaomi 12T Pro Phone Case Thin Hard PC Xiaomi 12T Protective Case Anti-Fingerprint Cover with Ultimate Delicate Touch Feeling (White)",
-    "rating": null,
+    "rating": 4.8,
     "is_bundle": false
   },
   {
@@ -1140,9 +1139,9 @@
     "price": 10,
     "category": "accessories",
     "image": "Images/PhoneCases/12.jpg",
-    "quantity": 10,
+    "quantity": 100,
     "description": "JETech Case for Samsung Galaxy A14 4G/5G 6.6-Inch, Non-Yellowing Shockproof Bumper Protective Phone Cover, Anti-Scratch Hard PC Back (Clear)",
-    "rating": null,
+    "rating": 4.6,
     "is_bundle": false
   }
   ]

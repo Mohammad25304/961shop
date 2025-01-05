@@ -239,7 +239,11 @@ body{
 
 }
 
-
+.product-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
 .image_product img {
     width: 100%; /* Ensures the image spans the full width of its container */
     max-height: 200px; /* Limits the maximum height of the image */
@@ -284,7 +288,7 @@ body{
 
 
 .add_to_cart{
-    display: flex;
+    display: block;
     justify-content: flex-end; 
 }
 
